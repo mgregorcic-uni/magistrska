@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{ambrovzivc2016elektrivcni}
+V.~Ambro{\v{z}}i{\v{c}}, P.~Zajec, D.~Von{\v{c}}ina  in R.~Fi{\v{s}}er, {\em
+  Elektri{\v{c}}ni servo pogoni}.
+\newblock Slovensko zdru{\v{z}}enje elektroenergetikov CIGR{\'E}-CIRED, 2016.
+
+\bibitem{ThreeYearsOfExperience}
+S.~Sato, H.~Iura, K.~Ide  in S.-K. Sul, ``Three years of industrial experience
+  with sensorless ipmsm drive based on high frequency injection method,'' v
+  {\em 2011 Symposium on Sensorless Control for Electrical Drives},
+  str.~74--79, 2011.
+
+\bibitem{IPDBoussak}
+M.~Boussak, ``Implementation and experimental investigation of sensorless speed
+  control with initial rotor position estimation for interior permanent magnet
+  synchronous motor drive,'' {\em IEEE Transactions on Power Electronics},
+  vol.~20, no.~6, str.~1413--1422, 2005.
+
+\end{thebibliography}
