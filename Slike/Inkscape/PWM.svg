@@ -8,7 +8,7 @@
    version="1.1"
    id="svg4348"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
-   sodipodi:docname="PWM - Copy.svg"
+   sodipodi:docname="PWM.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -219,17 +219,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9195959"
-     inkscape:cx="97.290317"
-     inkscape:cy="123.30175"
+     inkscape:zoom="3.959798"
+     inkscape:cx="116.04127"
+     inkscape:cy="85.610429"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="5120"
-     inkscape:window-height="1369"
-     inkscape:window-x="1272"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
+     inkscape:window-width="2558"
+     inkscape:window-height="1360"
+     inkscape:window-x="1280"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
      inkscape:showpageshadow="2"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1">
@@ -250,7 +250,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -354,7 +353,7 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.251;stroke-dasharray:none"
-       d="m 20,29.999998 v -3.999999 h 19.000001 v 3.999999 h 21 V 25.999999 H 67"
+       d="M 20,19.999999 V 16 h 19.000001 v 3.999999 h 21 V 16 H 67"
        id="path1" />
     <path
        style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.251;stroke-dasharray:none"
@@ -362,7 +361,7 @@
        id="path2" />
     <path
        style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.251;stroke-dasharray:none"
-       d="m 20,19.999999 h 7.999999 v -4 h 19.000002 v 4 H 67"
+       d="m 20.000002,29.999999 h 7.999999 v -4 h 19.000002 v 4 h 19.999999"
        id="path3" />
     <path
        style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;marker-start:url(#Arrow2Mend-7-4-0-5-7);marker-end:url(#Arrow2Mend-7-4-0-5-7)"

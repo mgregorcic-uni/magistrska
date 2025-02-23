@@ -154,9 +154,12 @@ V pričujočem zaključnem delu so uporabljene naslednje veličine in simboli:
 %******************************* UVOD ******************************************
 \chapter{Uvod} \label{uvod}
 
-Vedno večja uporaba brezkrtačnih sinhronskih strojev v industriji, vendar je njihova cena visoka, zato brez senzorja, brezsenzorsko tudi zaradi boljše robustnosti. Brezsenzorsko vodenje prednosti slabosti bla bla bla \\
-Pogon, ki vključuje algoritem HFSI ima separator (breme), kateremu se močno spremeni karakteristika pri nizkih temperaturah, saj olje zamrzne bla bla bla... \\
-HFSI torej rešuje problem zagona stroja iz nevrtečega stanja, z uporabo maksimalnega navora, do določene vrtilne hitrosti, kjer preklopi na SMO
+V industriji je vedno večja uporaba brezkrtačnih sinhronskih strojev, zaradi njihove specifične gostote moči in dobre učinkovitosti. Vendar pa za vodenje takih motorjev potrebujemo dražje in bolj
+kompleksne gonilnike, kar pa poveča ceno. Zato se za vodenje uporabijo brezsenzorski algoritmi, ki omogočajo vodenje brezkrtačnih strojev brez uporabe senzorja pozicije, obenem pa to poveča robustnost
+pogona, saj izključi dodatno mehansko komponentno. Večina brezsenzorskih algotimov pa deluje na principu opazovalnika pozicije, ki estimira inducirano napetost stroja, ta pa je pri nizkih obratih
+premajhna za uporabo le-teh, zato je potrebno za visoke navore pri nizkih obratih uporabiti drugo metodo. V našem primeru pogona, se v bremenu nahaja emulzija olja in vode, ki pri nizkih temperaturah
+zamrzne in poveča bremenski navor. Zato je nastala potreba po višjih navorih pri nizkih obratih in uporaba HFSI algoritma.
+
 
 %******************************* POGLAVJA **************************************
 
@@ -212,11 +215,11 @@ Na sliki \ref{FOCshema} je prikazana shema FOC regulacije sistema, ki vključuje
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.75\columnwidth]{Slike/Inkscape/FOC-eps-converted-to.pdf}
+    \includegraphics[width=0.75\columnwidth]{Slike/Inkscape/FOC.eps}
     \caption{\label{FOCshema} Shema brezsenzorskega FOC vodenja.}
 \end{figure}
 
-Ker se uporablja brezsenzorsko vodenje, je potrebno odklon rotorja estimirati iz merjenega toka. Pri višji vrtilni hitrosti se za to uporablja metoda (TODO - SMO PLL ?). Ta z uporabo modela motorja, merjenega
+Ker se uporablja brezsenzorsko vodenje, je potrebno odklon rotorja estimirati iz merjenega toka. Pri višji vrtilni hitrosti se za to uporablja opazovalnik pozicije. Ta z uporabo modela motorja, merjenega
 kota in znane pritisnjene napetosti estimira inducirano napetost, ki pa je funkcija odklona rotorja. Z uporabo fazno zaklenjene zanke (PLL) pa se iz inducirane napetosti estimira odklon rotorja TODO
 citat.
 Opisana metoda odpove pri nižjih hotrostih, kjer je inducirana napetost premajhna oziroma ničelna v nevrtečem stanju. V takih pogojih se uporabljajo metode, ki izkoriščajo izraženost polov \cite{ThreeYearsOfExperience}. Skupnost
@@ -234,7 +237,13 @@ V tem poglavju je opisano delovanje HFSI metode. Ker metoda stoji na predpostavk
 opisan postopek vzbujanja statorja z visoko frekvenco, nato pa izračun estimiranega kota. Na koncu je opisana integracija algoritma v FOC.
 \\
 V klasičnem FOC vodenju 3 faznega stroja se fazne veličine z uporabo Clarkine transformacije pretvorijo v 2 fazni sistem, nato pa z uporabo Parkove transformacije v d-q k.s. Pri HFSI metodi pa se
-uporablja dodaten d-q k.s., HKS, v katerem vzbujamo stator in tokovni odziv uporabljamo za vodenje odklona HKS. Na sliki \ref{koordinatniSistem} so prikazani uporabljeni k.s.
+uporablja dodaten d-q k.s., HKS, v katerem vzbujamo stator in tokovni odziv uporabljamo za vodenje odklona HKS. Na sliki \ref{hfsiMetoda} je prikazana shema HFSI algoritma.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1\columnwidth]{Slike/Inkscape/HFSI.eps}
+    \caption{\label{hfsiMetoda} Shema HFSI algoritma.}
+\end{figure}
 
 \begin{figure}[!htbp]
     \centering
@@ -326,7 +335,9 @@ Ko vstavimo induktivnosti $L_{dh}$ in $L_{qh}$ v zgornjo enačbo, dobimo amplitu
 \end{center}
 
 V realnem sistemu iz merjenega toka dobimo visoko frekvenčni odziv, ne pa direktno amplitude. To moramo izračunati iz odziva s pomočjo Fourierove transformacije. V digitalnih sistemih se velikokrat
-uporablja hitra Fourierova transformacija (FFT), ki pa je za ta primer prepotratna, saj potrebujemo amplitudo signala pri le eni frekvenci - zato uporabimo Goertzelov algoritem.
+uporablja diskretna Fourierova transformacija (DFT), ki pa je za ta primer prepotratna, saj potrebujemo amplitudo signala pri le eni frekvenci - zato uporabimo Goertzelov algoritem.
+
+// TODO bolj natačno?
 
 Kot induktivnost stroja, so tudi tokovni odzivi poenostavitev realnega sistema. Lahko pričakujemo najnižjo vrednost amplitude tokovnega odziva v vzdolžni smeri in najvišjo v prečni, vendar bo oblika
 in s tem tudi odklon, kjer sta odziva enake amplitude malo zamaknjena od pričakovane. To je prikazano na slikah \ref{tokovniOdzivKot0} in \ref{tokovniOdzivKot45}, kjer je odklon rotorja kot med
@@ -464,7 +475,15 @@ Kaj je mrtvi čas, zakaj je potreben in kako vpliva na sistem. Realna napetost n
 \\
 V praktičnem sistemu, kjer se uporablja močnostni pretvornik imamo opravka s preklopi visokih in nizkih tranzistorjev. Ko je odprt nizek fet, je fazna napetost 0V, ko je odprt visok fet pa je fazna
 napetost enaka napajalni. Med preklopom iz 0V in 24V pa je za kratek čas potrebno izklopiti oba, saj v primeru, kjer prevajata oba nastane nizko-impedančna pot, ki povzroči kratek stik. Čas, ko sta
-izklopljena oba se imenuje mrtvi čas in povzroča napetostno napako \cite{ambrovzivc2016elektrivcni}. Ta napaka je odvisna od 
+izklopljena oba se imenuje mrtvi čas, napetost faze v tem času pa je odvisna od smeri toka te faze. Slika \ref{mrtviCasRazlaga} prikazuje odvisnost napetosti faze, ko sta oba tranzistorja močnostnega
+pretvornika te faze zaprta. Ker sta oba zaprta, mora tok steči skozi diodo zgornjega ali spodnjega tranzistorja. Ko tok teče v stroj, steče skozi spodnjo diodo, zato je napetost te faze v tem primeru
+0V, ko pa teče iz stroja, pa steče skozi zgornjo in je napetost takrat enaka napajalni. To povzroča napetostno napako \cite{ambrovzivc2016elektrivcni}.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{Slike/Inkscape/mrtviCasRazlaga.eps}
+    \caption{\label{mrtviCasRazlaga} Napetost faze ko sta oba tranzistorja zaprta}
+\end{figure}
 
 Za delovanje HFSI algoritma pa poleg osnovne harmonske komponente za tvorjenje navora vzbujamo stator še z visoko frekvenčno komponento. V primeru, kjer stator vzbujamo samo z visoko frekvenco, bi
 mrtvi čas vedno vplival na odziv in njegov vpliv bi bil konstanten. Ko pa vzbujamo še s konstantnim prečnim ali vzdolžnim tokom, pa vidimo vpliv mrtvega časa samo, ko osnovna harmonska tokovna komponenta
@@ -488,7 +507,16 @@ napetost.
     \caption{\label{mrtviCasNapetost} Odvisnost popačenja amplitude odziva od napajalne napetosti }
 \end{figure}
 
-Dodatno lahko pokažemo, da se vpliv mrtvega časa začne kazati takrat, ko začne VF tokovni odziv menjati polariteto. // TODO dodaj graf in pokomentiraj
+Dodatno lahko pokažemo, da se vpliv mrtvega časa začne kazati takrat, ko začne VF tokovni odziv menjati polariteto. Na zgornjem grafu sta prikazani amplitudi tokovnega odziva prečne in vzdolžne
+komponente in fazni tok $I_u$, na drugem grafu pa filtriran $I_u$ s pasovnim filtrom. Na prvem grafu je z modro barvo označen del, kjer fazni tok prehaja skozi nič, torej takrat, ko mrtvi čas kvari
+tokovni odziv. Opazi se izrazit efekt mrtvega časa na tokovnem odzivu prečne in vzdolžne komponente v modrem delu, prav tako pa se opazi na faznem toku na drugem grafu.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1\columnwidth]{Slike/mrtviCasFazniTok.eps}
+    \caption{\label{mrtviCasFazniTok} Vpliv mrtvega časa na faznem toku }
+\end{figure}
+
 
 Takšno popačenje amplitude odziva naravno vpliva na oceno pozicije, saj bo PI regulator poiskušal zmanjšati napako in to tako, da bo spremenil odklon HKS na mesto, kjer imata odziva enako vrednost.
 Vpliv mrtvega časa na oceno pozicije pa je prikazan v zadnjem poglavju.
@@ -496,7 +524,7 @@ Vpliv mrtvega časa na oceno pozicije pa je prikazan v zadnjem poglavju.
 \chapter{Integracija v FOC} \label{integracija}
 
 Za uspešno implementacijo HFSI algoritma, ga je potrebno tudi pravilno integrirati v celotno FOC vodenje. Potrebno je poskrbeti za pravilno inicializacijo algoritma, filtriranje tokovne povratne
-zanke, zadnji element pa je preklop v delovanje SMO načina, ko vrtilna hitrost doseže dovolj visoko vrednost.
+zanke, zadnji element pa je preklop v delovanje opazovalnika, ko vrtilna hitrost doseže dovolj visoko vrednost.
 
 \section{Inicializacija HFSI}
 
@@ -511,44 +539,62 @@ Ob zagonu prvih nekaj period vzbujalnega signala FOC regulatorje izklopimo, da s
 
 \section{Začetni kot in izbira minimuma}
 
-\section{Preklop v SMO}
+\section{Brezudarni preklop v delovanje opazovalnika}
 
 Proti koncu delovanja HFSI algoritma, ko je vrtilna hitrost že dovolj visoka, da ocenjujemo pozicijo rotorja z inducirano napetostjo, je potrebno izvesti brezudarni preklop. Takoj po preklopu želimo,
-da SMO začne delovati v pravilni delovni točki. To lahko dosežemo tako, da SMO deluje vzporedno s HFSI algoritmom. Ob preklopu tako samo izklopimo vzbujanje statorja. Ta način pa terja dodatne
-kalkulacije, ki so lahko v določenih sistemih, kjer je nadvsem pomembna nizka cena in zato uporaba manj zmogljivih procesorjev, previsoke. Zato se uporabi drug način, ki pa ob preklopu postavi SMO v
-željeno delovno točko. To pomeni, da je potrebno vsa notranja stanja postaviti na pravilno začetno vrednost. To vključuje notranja stanja modela, ki se uporablja za estimacijo inducirane napetosti,
-ocenjeno hitrost in pozicijo PLL. Problem pri tej metodi pa je, da se je težko izogniti manjšim prenihajem, saj bo vedno prisotna napaka estimacije pozicije in hitrosti algoritma HFSI in ima zato SMO ob
-preklopu že neko majhno napako. 
+da opazovalnik začne delovati v pravilni delovni točki. To lahko dosežemo tako, da opazovalnik deluje že pred preklopom, vzporedno s HFSI algoritmom. Ob preklopu tako samo izklopimo vzbujanje
+statorja. Ta način pa terja dodatne kalkulacije, ki so lahko v določenih sistemih, kjer je nadvsem pomembna nizka cena in zato uporaba manj zmogljivih procesorjev, previsoke. Zato se uporabi drug
+način, ki pa ob preklopu postavi opazovalnik v željeno delovno točko. To pomeni, da je potrebno vsa notranja stanja postaviti na pravilno začetno vrednost. To vključuje notranja stanja modela, ki se
+uporablja za estimacijo inducirane napetosti, ocenjeno hitrost in pozicijo. Problem pri tej metodi pa je, da se je težko izogniti manjšim prenihajem, saj bo vedno prisotna napaka estimacije
+pozicije in hitrosti algoritma HFSI in ima zato opazovalnik ob preklopu že neko majhno napako. Na sliki \ref{brezudarniPreklop} sta na prvem grafu prikazani ocenjeni hitrosti HFSI algoritma in
+opazovalnika. Ob preklopu, ki se zgodi okoli 0.5 sekunde, hitrost opazovalnika predpolnimo z ocenjeno hitrostjo HFSI algoritma. Drugi graf prikazuje ocenjeno pozicijo obeh algoritmov, na zadnjem grafu
+pa je prikazana napaka ocenjenega kota. Po preklopu se opazi minimalen prenihaj.
 
-% TODO slika brezudarnega preklopa
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1\columnwidth]{Slike/brezudarniPreklop.eps}
+    \caption{\label{brezudarniPreklop} Preklop v delovanje opazovalnika pozicije. }
+\end{figure}
 
 \chapter{Eksperimenti}  \label{eksperimenti}
 
 V tem poglavju je najprej opisano krmiljenje napetostnega pretvornika in merjenje toka, saj tudi to vpliva na algoritem. Na koncu so prikazane meritve realnega sistema, ki so bile zajete z
-osciloskopom, interne spremenljivke, uporabljene v samem algoritmu, pa so bile v realnem času poslane na računalnik preko komunikacijskega protokola UART. 
+osciloskopom, interne spremenljivke, uporabljene v samem algoritmu, pa so bile v realnem času poslane na računalnik preko serijske komunikacije.
 
-TODO opis sistema ker proc driver etc?
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/EksperimentiSlika.jpg}
+    \caption{\label{experimentiSlika} Fotografija močnostnega pretvornika in stroja}
+\end{figure}
+
+Na fotografiji \ref{experimentiSlika} je prikazan sistem, na katerem je bil razvit HFSI algoritem. Vidno
 
 \section{Trifazni PWM in meritev toka}
 
 V sistemu se uporablja asimetričen PWM s fazno zamaknjenimi fazami. Največja prednost tega je preprosta implementacija krmiljenja napetosti in merjenje toka, slaba lastnost pa je večje valovanje
-frekvence PWM-ja. Potek faznih napetosti je prikazan na sliki \ref{PWM}, kjer se vidi fazni zamak faz - fazno sta zamaknjeni prva in druga faza za merjenje toka. $t_{PWM}$ je perioda PWM, $t_{MEAS}$
+frekvence PWM-ja. Potek faznih napetosti je prikazan na sliki \ref{PWM}, kjer se vidi fazni zamak faz - fazno sta zamaknjeni druga in tretja faza za merjenje toka. $t_{PWM}$ je perioda PWM, $t_{MEAS}$
 pa je časovni zamik poteka faze za tokovno meritev. $t_0$ do $t_5$ pa so časi, kjer faze spremenijo polariteto. Ti časi določajo, kakšna je efektivna napetost na fazah in se izračunajo kot je
 prikazano z enačbo \ref{izracunPWM}. $t_0$, $t_1$ in $t_2$ se ne spreminjajo, saj takrat merimo tok, $t_3$, $t_4$ in $t_5$ pa so odvisni od željenih faznih napetosti. Implementacija na mikrokrmilniku
 potrebuje še dodatno pretvorbo iz časa v število taktov PWM periferije krmilnika.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1\columnwidth]{Slike/Inkscape/PWM.eps}
+    \caption{\label{PWM} Pulzno širinska modulacija močnostnega pretvornika }
+\end{figure}
 
 \begin{equation} \label{izracunPWM}
 \begin{gathered}
     t_0 = 0  \\
     t_1 = t_{MEAS}  \\
     t_2 = 2t_{MEAS}  \\
-    t_3 = t_{MID} + u_uV_c  \\
-    t_4 = t_{MID} + t_{MEAS} + u_vV_c \\
-    t_5 = t_{MID} + 2t_{MEAS} + u_wV_c
+    t_3 = t_{MID} + u_uC  \\
+    t_4 = t_{MID} + t_{MEAS} + u_vC \\
+    t_5 = t_{MID} + 2t_{MEAS} + u_wC
 \end{gathered}
 \end{equation}
 
-$t_{MID}$ ni polovica $t_{PWM}$, saj smo rezervirali $2t_{MEAS}$ periode za meritev toka. Zato je $t_{MID}$ enak polovici $t_{MID} - 2t_{MEAS}$. $V_c$ pa je faktor za pretvorbo željenje napetosti v
+$t_{MID}$ ni polovica $t_{PWM}$, saj smo rezervirali $2t_{MEAS}$ periode za meritev toka. Zato je $t_{MID}$ enak polovici $t_{MID} - 2t_{MEAS}$. $C$ pa je faktor za pretvorbo željenje napetosti v
 čas in je preprosto razmerje med dolžino periode in napetostno zalogo. Napetostna zaloga - oziroma napajalna napetost - se aktivno meri, saj želimo da je dejanska napetost na izhodu enaka željeni. Pri
 FOC vodenju to praviloma ni problem, saj tokovni regulatorji tok regulirajo. HFSI algoritem pa vsebuje tudi visokofrekvenčno napetostno vzbujanje in se predpostavlja, da je taka tudi na izhodu in ni
 odvisna od napajalne napetosti. Če bi ta bila odvisna, bi pri višjih napajalnih napetostih dobili večji tokovni odziv, kar pa si lahko predstavljamo kot ojačanje povratne zanke - to pa bi sledilo v
@@ -556,11 +602,34 @@ spremembo dinamike regulacijskega sistema, ki ga HFSI vsebuje.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/Inkscape/PWM.pdf}
-    \caption{\label{PWM} Pulzno širinska modulacija močnostnega pretvornika }
+    \includegraphics[width=0.75\columnwidth]{Slike/Inkscape/inverter.eps}
+    \caption{\label{inverter} Shema močnostnega pretvornika in meritve toka }
 \end{figure}
 
-// TODO dodaj sliko pwmjev in shunt meritve
+Na sliki \ref{inverter} je prikazan močnostni pretvornik, prav tako pa je prikazano merjenje toka. Uporabljena je konfiguracija enega shunta, kar pomeni, da ko bodo vse tri faze na napajalni
+napetosti ali na 0V, skozi shunt ne bo tekel tok. Zato meritev delamo v začetku PWM periode, ko naprej preklopimo prvo fazo, nato pa drugo. Na sliki \ref{meritevTokaIu} je prikazana prva meritev.
+Če definiramo tok, ki teče v stroj kot pozitiven tok, v tem času merimo tok $I_u$, saj teče iz prve faze v stroj, se porazdeli med drugo in tretjo fazo in skozi shunt. 
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/Inkscape/meritevTokaIu.eps}
+    \caption{\label{meritevTokaIu} Shema močnostnega pretvornika in meritve toka }
+\end{figure}
+
+Na sliki \ref{meritevTokaIw} pa je prikazana druga meritev, kjer tok steče skozi prvo in drugo fazo v stroj, iz tretje faze stroja pa skozi shunt, zato tukaj merimo negativen tok $I_w$. 
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/Inkscape/meritevTokaIw.eps}
+    \caption{\label{meritevTokaIw} Shema močnostnega pretvornika in meritve toka }
+\end{figure}
+
+Tok druge faze $I_v$ pa izračunamo po enačbi \ref{izracunIv} iz dveh meritev, saj velja $I_u + I_v + I_w = 0$.
+
+
+\begin{equation} \label{izracunIv}
+I_v = -(I_u + I_w)
+\end{equation}
 
 
 %V sistemu se uporablja asimetričen PWM in je prikazan na sliki TODO. Največja prednost tega je preprosta implementacija krmiljenja napetosti in merjenje toka, slaba lastnost pa je večje valovanje

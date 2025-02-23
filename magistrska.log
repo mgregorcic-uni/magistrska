@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.1.29)  20 FEB 2025 21:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.1.29)  23 FEB 2025 15:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/Faks in backup/Faks/magistrska/magistrska_latex/Latex/magistrska.tex"
-(d:/Faks in backup/Faks/magistrska/magistrska_latex/Latex/magistrska.tex
+**"d:/Faks in backup/Faks/magistrska/magistrska_latex/Delo/magistrska/magistrska.tex"
+(d:/Faks in backup/Faks/magistrska/magistrska_latex/Delo/magistrska/magistrska.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\matic\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
@@ -1904,10 +1904,10 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 ]
   2.
-<Slike/Inkscape/IPMSM.pdf, id=231, 226.8475pt x 208.78pt>
+<Slike/Inkscape/IPMSM.pdf, id=247, 226.8475pt x 208.78pt>
 File: Slike/Inkscape/IPMSM.pdf Graphic file (type pdf)
 <use Slike/Inkscape/IPMSM.pdf>
-Package pdftex.def Info: Slike/Inkscape/IPMSM.pdf  used on input line 173.
+Package pdftex.def Info: Slike/Inkscape/IPMSM.pdf  used on input line 176.
 (pdftex.def)             Requested size: 206.28247pt x 189.85309pt.
 
 Underfull \vbox (badness 3590) has occurred while \output is active []
@@ -1916,17 +1916,26 @@ Underfull \vbox (badness 3590) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.182 \begin{equation}
+l.185 \begin{equation}
                        \label{motorModelD} <./Slike/Inkscape/IPMSM.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [4]
-<Slike/Inkscape/FOC-eps-converted-to.pdf, id=265, 463.7325pt x 251.94125pt>
+Package epstopdf Info: Source file: <Slike/Inkscape/FOC.eps>
+(epstopdf)                    date: 2025-02-09 12:38:15
+(epstopdf)                    size: 150161 bytes
+(epstopdf)             Output file: <Slike/Inkscape/FOC-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-22 18:41:44
+(epstopdf)                    size: 49508 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/Inkscape/FOC-eps-converted-to.pdf Slike/Inkscape/FOC.eps>
+(epstopdf)             \includegraphics on input line 218.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/Inkscape/FOC-eps-converted-to.pdf, id=281, 463.7325pt x 251.94125pt>
 File: Slike/Inkscape/FOC-eps-converted-to.pdf Graphic file (type pdf)
 <use Slike/Inkscape/FOC-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/Inkscape/FOC-eps-converted-to.pdf  used on input line 215.
+Package pdftex.def Info: Slike/Inkscape/FOC-eps-converted-to.pdf  used on input line 218.
 (pdftex.def)             Requested size: 309.4237pt x 168.10777pt.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -1937,7 +1946,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.229 \chapter
+l.232 \chapter
               {Delovanje HFSI} \label{teorija} <./Slike/Inkscape/FOC-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -1947,19 +1956,33 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 ]
   3.
+Package epstopdf Info: Source file: <Slike/Inkscape/HFSI.eps>
+(epstopdf)                    date: 2025-02-23 14:53:06
+(epstopdf)                    size: 187519 bytes
+(epstopdf)             Output file: <Slike/Inkscape/HFSI-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 14:53:14
+(epstopdf)                    size: 54586 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/Inkscape/HFSI-eps-converted-to.pdf Slike/Inkscape/HFSI.eps>
+(epstopdf)             \includegraphics on input line 244.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/Inkscape/HFSI-eps-converted-to.pdf, id=316, 495.8525pt x 379.4175pt>
+File: Slike/Inkscape/HFSI-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/Inkscape/HFSI-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/Inkscape/HFSI-eps-converted-to.pdf  used on input line 244.
+(pdftex.def)             Requested size: 412.56496pt x 315.68643pt.
 Package epstopdf Info: Source file: <Slike/Inkscape/koordinatniSistem.eps>
 (epstopdf)                    date: 2025-02-05 20:00:07
 (epstopdf)                    size: 39521 bytes
 (epstopdf)             Output file: <Slike/Inkscape/koordinatniSistem-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-05 20:00:20
+(epstopdf)                    date: 2025-02-22 18:36:26
 (epstopdf)                    size: 17335 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=Slike/Inkscape/koordinatniSistem-eps-converted-to.pdf Slike/Inkscape/koordinatniSistem.eps>
-(epstopdf)             \includegraphics on input line 241.
+(epstopdf)             \includegraphics on input line 250.
 Package epstopdf Info: Output file is already uptodate.
-<Slike/Inkscape/koordinatniSistem-eps-converted-to.pdf, id=300, 332.24126pt x 376.40625pt>
+<Slike/Inkscape/koordinatniSistem-eps-converted-to.pdf, id=317, 332.24126pt x 376.40625pt>
 File: Slike/Inkscape/koordinatniSistem-eps-converted-to.pdf Graphic file (type pdf)
 <use Slike/Inkscape/koordinatniSistem-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/Inkscape/koordinatniSistem-eps-converted-to.pdf  used on input line 241.
+Package pdftex.def Info: Slike/Inkscape/koordinatniSistem-eps-converted-to.pdf  used on input line 250.
 (pdftex.def)             Requested size: 309.4237pt x 350.57684pt.
 [7]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -1970,23 +1993,8 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.260 
-       <./Slike/Inkscape/koordinatniSistem-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Slike/induktivnostStroja.eps>
-(epstopdf)                    date: 2025-02-19 18:42:53
-(epstopdf)                    size: 25835 bytes
-(epstopdf)             Output file: <Slike/induktivnostStroja-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 18:43:02
-(epstopdf)                    size: 10287 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/induktivnostStroja-eps-converted-to.pdf Slike/induktivnostStroja.eps>
-(epstopdf)             \includegraphics on input line 263.
-Package epstopdf Info: Output file is already uptodate.
-<Slike/induktivnostStroja-eps-converted-to.pdf, id=324, 365.365pt x 293.095pt>
-File: Slike/induktivnostStroja-eps-converted-to.pdf Graphic file (type pdf)
-<use Slike/induktivnostStroja-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/induktivnostStroja-eps-converted-to.pdf  used on input line 263.
-(pdftex.def)             Requested size: 412.56496pt x 330.97433pt.
-
+l.269 
+       <./Slike/Inkscape/HFSI-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1995,161 +2003,177 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.275 
+l.269 
+       <./Slike/Inkscape/koordinatniSistem-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Slike/induktivnostStroja.eps>
+(epstopdf)                    date: 2025-02-19 18:42:53
+(epstopdf)                    size: 25835 bytes
+(epstopdf)             Output file: <Slike/induktivnostStroja-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-19 18:43:02
+(epstopdf)                    size: 10287 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/induktivnostStroja-eps-converted-to.pdf Slike/induktivnostStroja.eps>
+(epstopdf)             \includegraphics on input line 272.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/induktivnostStroja-eps-converted-to.pdf, id=365, 365.365pt x 293.095pt>
+File: Slike/induktivnostStroja-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/induktivnostStroja-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/induktivnostStroja-eps-converted-to.pdf  used on input line 272.
+(pdftex.def)             Requested size: 412.56496pt x 330.97433pt.
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[10
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.284 
        <./Slike/induktivnostStroja-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[10]
+[11]
 Package epstopdf Info: Source file: <Slike/tokovniOdzivKot0.eps>
-(epstopdf)                    date: 2025-02-19 20:20:55
-(epstopdf)                    size: 27549 bytes
+(epstopdf)                    date: 2025-02-23 12:18:31
+(epstopdf)                    size: 27559 bytes
 (epstopdf)             Output file: <Slike/tokovniOdzivKot0-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 20:20:58
-(epstopdf)                    size: 10484 bytes
+(epstopdf)                    date: 2025-02-23 12:18:34
+(epstopdf)                    size: 10504 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=Slike/tokovniOdzivKot0-eps-converted-to.pdf Slike/tokovniOdzivKot0.eps>
-(epstopdf)             \includegraphics on input line 337.
+(epstopdf)             \includegraphics on input line 348.
 Package epstopdf Info: Output file is already uptodate.
-<Slike/tokovniOdzivKot0-eps-converted-to.pdf, id=345, 559.08875pt x 293.095pt>
+<Slike/tokovniOdzivKot0-eps-converted-to.pdf, id=385, 559.08875pt x 293.095pt>
 File: Slike/tokovniOdzivKot0-eps-converted-to.pdf Graphic file (type pdf)
 <use Slike/tokovniOdzivKot0-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/tokovniOdzivKot0-eps-converted-to.pdf  used on input line 337.
+Package pdftex.def Info: Slike/tokovniOdzivKot0-eps-converted-to.pdf  used on input line 348.
 (pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
 Package epstopdf Info: Source file: <Slike/tokovniOdzivKot45.eps>
-(epstopdf)                    date: 2025-02-19 20:20:56
-(epstopdf)                    size: 27563 bytes
+(epstopdf)                    date: 2025-02-23 12:18:32
+(epstopdf)                    size: 27573 bytes
 (epstopdf)             Output file: <Slike/tokovniOdzivKot45-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 20:20:59
-(epstopdf)                    size: 10504 bytes
+(epstopdf)                    date: 2025-02-23 12:18:35
+(epstopdf)                    size: 10524 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=Slike/tokovniOdzivKot45-eps-converted-to.pdf Slike/tokovniOdzivKot45.eps>
-(epstopdf)             \includegraphics on input line 343.
+(epstopdf)             \includegraphics on input line 354.
 Package epstopdf Info: Output file is already uptodate.
-<Slike/tokovniOdzivKot45-eps-converted-to.pdf, id=346, 559.08875pt x 293.095pt>
+<Slike/tokovniOdzivKot45-eps-converted-to.pdf, id=386, 559.08875pt x 293.095pt>
 File: Slike/tokovniOdzivKot45-eps-converted-to.pdf Graphic file (type pdf)
 <use Slike/tokovniOdzivKot45-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/tokovniOdzivKot45-eps-converted-to.pdf  used on input line 343.
+Package pdftex.def Info: Slike/tokovniOdzivKot45-eps-converted-to.pdf  used on input line 354.
 (pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
 Package epstopdf Info: Source file: <Slike/tokovniOdzivId.eps>
-(epstopdf)                    date: 2025-02-19 20:20:58
-(epstopdf)                    size: 102950 bytes
+(epstopdf)                    date: 2025-02-23 12:18:35
+(epstopdf)                    size: 102960 bytes
 (epstopdf)             Output file: <Slike/tokovniOdzivId-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 20:21:00
-(epstopdf)                    size: 35172 bytes
+(epstopdf)                    date: 2025-02-23 12:18:39
+(epstopdf)                    size: 35192 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=Slike/tokovniOdzivId-eps-converted-to.pdf Slike/tokovniOdzivId.eps>
-(epstopdf)             \includegraphics on input line 355.
+(epstopdf)             \includegraphics on input line 366.
 Package epstopdf Info: Output file is already uptodate.
-<Slike/tokovniOdzivId-eps-converted-to.pdf, id=351, 559.08875pt x 293.095pt>
+<Slike/tokovniOdzivId-eps-converted-to.pdf, id=391, 559.08875pt x 293.095pt>
 File: Slike/tokovniOdzivId-eps-converted-to.pdf Graphic file (type pdf)
 <use Slike/tokovniOdzivId-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/tokovniOdzivId-eps-converted-to.pdf  used on input line 355.
-(pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
-Package epstopdf Info: Source file: <Slike/tokovniOdzivIq_IdAmp.eps>
-(epstopdf)                    date: 2025-02-19 20:21:03
-(epstopdf)                    size: 71703 bytes
-(epstopdf)             Output file: <Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 20:21:07
-(epstopdf)                    size: 25176 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf Slike/tokovniOdzivIq_IdAmp.eps>
-(epstopdf)             \includegraphics on input line 364.
-Package epstopdf Info: Output file is already uptodate.
-<Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf, id=354, 559.08875pt x 293.095pt>
-File: Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf Graphic file (type pdf)
-<use Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf  used on input line 364.
-(pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
-Package epstopdf Info: Source file: <Slike/tokovniOdzivIq_IqAmp.eps>
-(epstopdf)                    date: 2025-02-19 20:21:04
-(epstopdf)                    size: 71467 bytes
-(epstopdf)             Output file: <Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 20:21:07
-(epstopdf)                    size: 25360 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf Slike/tokovniOdzivIq_IqAmp.eps>
-(epstopdf)             \includegraphics on input line 370.
-Package epstopdf Info: Output file is already uptodate.
-<Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf, id=355, 559.08875pt x 293.095pt>
-File: Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf Graphic file (type pdf)
-<use Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf  used on input line 370.
+Package pdftex.def Info: Slike/tokovniOdzivId-eps-converted-to.pdf  used on input line 366.
 (pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[11]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[12
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.379 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.379 
-       <./Slike/tokovniOdzivKot0-eps-converted-to.pdf> <./Slike/tokovniOdzivKot45-eps-converted-to.pdf>]
+[12]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [13
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.372 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.379 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.379 
-       <./Slike/tokovniOdzivId-eps-converted-to.pdf> <./Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Slike/tokovniOdzivIs_IdAmp.eps>
-(epstopdf)                    date: 2025-02-19 20:44:02
-(epstopdf)                    size: 71703 bytes
-(epstopdf)             Output file: <Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 20:44:08
-(epstopdf)                    size: 25176 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf Slike/tokovniOdzivIs_IdAmp.eps>
-(epstopdf)             \includegraphics on input line 382.
+l.372 
+       <./Slike/tokovniOdzivKot0-eps-converted-to.pdf> <./Slike/tokovniOdzivKot45-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Slike/tokovniOdzivIq_IdAmp.eps>
+(epstopdf)                    date: 2025-02-23 12:18:38
+(epstopdf)                    size: 38026 bytes
+(epstopdf)             Output file: <Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 12:18:39
+(epstopdf)                    size: 14099 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf Slike/tokovniOdzivIq_IdAmp.eps>
+(epstopdf)             \includegraphics on input line 375.
 Package epstopdf Info: Output file is already uptodate.
-<Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf, id=391, 559.08875pt x 293.095pt>
-File: Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf Graphic file (type pdf)
-<use Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf  used on input line 382.
+<Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf, id=413, 559.08875pt x 293.095pt>
+File: Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf  used on input line 375.
 (pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
-Package epstopdf Info: Source file: <Slike/tokovniOdzivIs_IqAmp.eps>
-(epstopdf)                    date: 2025-02-19 20:44:03
-(epstopdf)                    size: 71467 bytes
-(epstopdf)             Output file: <Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 20:44:08
-(epstopdf)                    size: 25360 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf Slike/tokovniOdzivIs_IqAmp.eps>
-(epstopdf)             \includegraphics on input line 388.
+Package epstopdf Info: Source file: <Slike/tokovniOdzivIq_IqAmp.eps>
+(epstopdf)                    date: 2025-02-23 12:18:39
+(epstopdf)                    size: 38040 bytes
+(epstopdf)             Output file: <Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 12:18:40
+(epstopdf)                    size: 14137 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf Slike/tokovniOdzivIq_IqAmp.eps>
+(epstopdf)             \includegraphics on input line 381.
 Package epstopdf Info: Output file is already uptodate.
-<Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf, id=392, 559.08875pt x 293.095pt>
-File: Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf Graphic file (type pdf)
-<use Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf  used on input line 388.
+<Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf, id=414, 559.08875pt x 293.095pt>
+File: Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf  used on input line 381.
 (pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [14
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.390 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.405 \begin{center}
-                     <./Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf>]
+l.390 
+       <./Slike/tokovniOdzivId-eps-converted-to.pdf> <./Slike/tokovniOdzivIq_IdAmp-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Slike/tokovniOdzivIs_IdAmp.eps>
+(epstopdf)                    date: 2025-02-23 12:18:41
+(epstopdf)                    size: 71713 bytes
+(epstopdf)             Output file: <Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 12:18:46
+(epstopdf)                    size: 25196 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf Slike/tokovniOdzivIs_IdAmp.eps>
+(epstopdf)             \includegraphics on input line 393.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf, id=431, 559.08875pt x 293.095pt>
+File: Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf  used on input line 393.
+(pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
+Package epstopdf Info: Source file: <Slike/tokovniOdzivIs_IqAmp.eps>
+(epstopdf)                    date: 2025-02-23 12:18:41
+(epstopdf)                    size: 71477 bytes
+(epstopdf)             Output file: <Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 12:18:47
+(epstopdf)                    size: 25380 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf Slike/tokovniOdzivIs_IqAmp.eps>
+(epstopdf)             \includegraphics on input line 399.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf, id=432, 559.08875pt x 293.095pt>
+File: Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf  used on input line 399.
+(pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
+
+Underfull \vbox (badness 5908) has occurred while \output is active []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -2158,70 +2182,70 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.405 \begin{center}
-                    
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.9}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.405 \begin{center}
-                     <./Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf> <./Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Slike/reguliranaVelicinaIdq0.eps>
-(epstopdf)                    date: 2025-02-19 20:20:57
-(epstopdf)                    size: 28662 bytes
-(epstopdf)             Output file: <Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 20:21:01
-(epstopdf)                    size: 10833 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf Slike/reguliranaVelicinaIdq0.eps>
-(epstopdf)             \includegraphics on input line 413.
-Package epstopdf Info: Output file is already uptodate.
-<Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf, id=418, 562.1pt x 293.095pt>
-File: Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf Graphic file (type pdf)
-<use Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf  used on input line 413.
-(pdftex.def)             Requested size: 412.56496pt x 215.12482pt.
-Package epstopdf Info: Source file: <Slike/reguliranaVelicinaId.eps>
-(epstopdf)                    date: 2025-02-19 20:21:00
-(epstopdf)                    size: 60653 bytes
-(epstopdf)             Output file: <Slike/reguliranaVelicinaId-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 20:21:02
-(epstopdf)                    size: 20371 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/reguliranaVelicinaId-eps-converted-to.pdf Slike/reguliranaVelicinaId.eps>
-(epstopdf)             \includegraphics on input line 422.
-Package epstopdf Info: Output file is already uptodate.
-<Slike/reguliranaVelicinaId-eps-converted-to.pdf, id=420, 562.1pt x 293.095pt>
-File: Slike/reguliranaVelicinaId-eps-converted-to.pdf Graphic file (type pdf)
-<use Slike/reguliranaVelicinaId-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/reguliranaVelicinaId-eps-converted-to.pdf  used on input line 422.
-(pdftex.def)             Requested size: 412.56496pt x 215.12482pt.
-Package epstopdf Info: Source file: <Slike/reguliranaVelicinaIq.eps>
-(epstopdf)                    date: 2025-02-19 20:21:02
-(epstopdf)                    size: 39600 bytes
-(epstopdf)             Output file: <Slike/reguliranaVelicinaIq-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 20:21:03
-(epstopdf)                    size: 14234 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/reguliranaVelicinaIq-eps-converted-to.pdf Slike/reguliranaVelicinaIq.eps>
-(epstopdf)             \includegraphics on input line 432.
-Package epstopdf Info: Output file is already uptodate.
-<Slike/reguliranaVelicinaIq-eps-converted-to.pdf, id=421, 562.1pt x 293.095pt>
-File: Slike/reguliranaVelicinaIq-eps-converted-to.pdf Graphic file (type pdf)
-<use Slike/reguliranaVelicinaIq-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/reguliranaVelicinaIq-eps-converted-to.pdf  used on input line 432.
-(pdftex.def)             Requested size: 412.56496pt x 215.12482pt.
-
-
-LaTeX Warning: Reference `tokovniOdzivIs' on page 16 undefined on input line 441.
-
-
+l.418 \end{center}
+                   <./Slike/tokovniOdzivIq_IqAmp-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [16
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.418 \end{center}
+                  
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.443 
-       <./Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf>]
+l.418 \end{center}
+                   <./Slike/tokovniOdzivIs_IdAmp-eps-converted-to.pdf> <./Slike/tokovniOdzivIs_IqAmp-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Slike/reguliranaVelicinaIdq0.eps>
+(epstopdf)                    date: 2025-02-23 12:18:34
+(epstopdf)                    size: 28672 bytes
+(epstopdf)             Output file: <Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 12:18:35
+(epstopdf)                    size: 10853 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf Slike/reguliranaVelicinaIdq0.eps>
+(epstopdf)             \includegraphics on input line 424.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf, id=458, 562.1pt x 293.095pt>
+File: Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf  used on input line 424.
+(pdftex.def)             Requested size: 412.56496pt x 215.12482pt.
+Package epstopdf Info: Source file: <Slike/reguliranaVelicinaId.eps>
+(epstopdf)                    date: 2025-02-23 12:18:37
+(epstopdf)                    size: 60663 bytes
+(epstopdf)             Output file: <Slike/reguliranaVelicinaId-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 12:18:41
+(epstopdf)                    size: 20391 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/reguliranaVelicinaId-eps-converted-to.pdf Slike/reguliranaVelicinaId.eps>
+(epstopdf)             \includegraphics on input line 433.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/reguliranaVelicinaId-eps-converted-to.pdf, id=460, 562.1pt x 293.095pt>
+File: Slike/reguliranaVelicinaId-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/reguliranaVelicinaId-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/reguliranaVelicinaId-eps-converted-to.pdf  used on input line 433.
+(pdftex.def)             Requested size: 412.56496pt x 215.12482pt.
+Package epstopdf Info: Source file: <Slike/reguliranaVelicinaIq.eps>
+(epstopdf)                    date: 2025-02-23 12:18:40
+(epstopdf)                    size: 39610 bytes
+(epstopdf)             Output file: <Slike/reguliranaVelicinaIq-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 12:18:42
+(epstopdf)                    size: 14254 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/reguliranaVelicinaIq-eps-converted-to.pdf Slike/reguliranaVelicinaIq.eps>
+(epstopdf)             \includegraphics on input line 443.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/reguliranaVelicinaIq-eps-converted-to.pdf, id=461, 562.1pt x 293.095pt>
+File: Slike/reguliranaVelicinaIq-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/reguliranaVelicinaIq-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/reguliranaVelicinaIq-eps-converted-to.pdf  used on input line 443.
+(pdftex.def)             Requested size: 412.56496pt x 215.12482pt.
+
+
+LaTeX Warning: Reference `tokovniOdzivIs' on page 17 undefined on input line 452.
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -2230,124 +2254,172 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.443 
-      
+l.454 
+       <./Slike/reguliranaVelicinaIdq0-eps-converted-to.pdf>]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[18
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.12}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.443 
+l.454 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.13}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.454 
        <./Slike/reguliranaVelicinaId-eps-converted-to.pdf> <./Slike/reguliranaVelicinaIq-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Slike/reguliranaVelicinaIs.eps>
-(epstopdf)                    date: 2025-02-19 20:44:04
-(epstopdf)                    size: 72817 bytes
+(epstopdf)                    date: 2025-02-23 12:18:42
+(epstopdf)                    size: 72827 bytes
 (epstopdf)             Output file: <Slike/reguliranaVelicinaIs-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 20:44:09
-(epstopdf)                    size: 24519 bytes
+(epstopdf)                    date: 2025-02-23 12:18:43
+(epstopdf)                    size: 24539 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=Slike/reguliranaVelicinaIs-eps-converted-to.pdf Slike/reguliranaVelicinaIs.eps>
-(epstopdf)             \includegraphics on input line 446.
+(epstopdf)             \includegraphics on input line 457.
 Package epstopdf Info: Output file is already uptodate.
-<Slike/reguliranaVelicinaIs-eps-converted-to.pdf, id=446, 562.1pt x 293.095pt>
+<Slike/reguliranaVelicinaIs-eps-converted-to.pdf, id=486, 562.1pt x 293.095pt>
 File: Slike/reguliranaVelicinaIs-eps-converted-to.pdf Graphic file (type pdf)
 <use Slike/reguliranaVelicinaIs-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/reguliranaVelicinaIs-eps-converted-to.pdf  used on input line 446.
+Package pdftex.def Info: Slike/reguliranaVelicinaIs-eps-converted-to.pdf  used on input line 457.
 (pdftex.def)             Requested size: 412.56496pt x 215.12482pt.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[18
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.13}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.457 
-       <./Slike/reguliranaVelicinaIs-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Slike/mrtviCas.eps>
-(epstopdf)                    date: 2025-02-19 20:36:36
-(epstopdf)                    size: 69863 bytes
-(epstopdf)             Output file: <Slike/mrtviCas-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 20:58:28
-(epstopdf)                    size: 24045 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/mrtviCas-eps-converted-to.pdf Slike/mrtviCas.eps>
-(epstopdf)             \includegraphics on input line 477.
-Package epstopdf Info: Output file is already uptodate.
-<Slike/mrtviCas-eps-converted-to.pdf, id=458, 559.08875pt x 293.095pt>
-File: Slike/mrtviCas-eps-converted-to.pdf Graphic file (type pdf)
-<use Slike/mrtviCas-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/mrtviCas-eps-converted-to.pdf  used on input line 477.
-(pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
-Package epstopdf Info: Source file: <Slike/mrtviCasNapetost.eps>
-(epstopdf)                    date: 2025-02-19 20:36:29
-(epstopdf)                    size: 48979 bytes
-(epstopdf)             Output file: <Slike/mrtviCasNapetost-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-02-19 21:02:08
-(epstopdf)                    size: 17502 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/mrtviCasNapetost-eps-converted-to.pdf Slike/mrtviCasNapetost.eps>
-(epstopdf)             \includegraphics on input line 487.
-Package epstopdf Info: Output file is already uptodate.
-<Slike/mrtviCasNapetost-eps-converted-to.pdf, id=460, 559.08875pt x 293.095pt>
-File: Slike/mrtviCasNapetost-eps-converted-to.pdf Graphic file (type pdf)
-<use Slike/mrtviCasNapetost-eps-converted-to.pdf>
-Package pdftex.def Info: Slike/mrtviCasNapetost-eps-converted-to.pdf  used on input line 487.
-(pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[19]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[20
+[19
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.14}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.492 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.15}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.492 
-       <./Slike/mrtviCas-eps-converted-to.pdf> <./Slike/mrtviCasNapetost-eps-converted-to.pdf>]
+l.481 
+       <./Slike/reguliranaVelicinaIs-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Slike/Inkscape/mrtviCasRazlaga.eps>
+(epstopdf)                    date: 2025-02-23 11:31:08
+(epstopdf)                    size: 13854 bytes
+(epstopdf)             Output file: <Slike/Inkscape/mrtviCasRazlaga-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 11:32:00
+(epstopdf)                    size: 4408 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/Inkscape/mrtviCasRazlaga-eps-converted-to.pdf Slike/Inkscape/mrtviCasRazlaga.eps>
+(epstopdf)             \includegraphics on input line 484.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/Inkscape/mrtviCasRazlaga-eps-converted-to.pdf, id=499, 49.18375pt x 77.28876pt>
+File: Slike/Inkscape/mrtviCasRazlaga-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/Inkscape/mrtviCasRazlaga-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/Inkscape/mrtviCasRazlaga-eps-converted-to.pdf  used on input line 484.
+(pdftex.def)             Requested size: 206.28247pt x 324.2355pt.
+Package epstopdf Info: Source file: <Slike/mrtviCas.eps>
+(epstopdf)                    date: 2025-02-23 12:19:20
+(epstopdf)                    size: 69873 bytes
+(epstopdf)             Output file: <Slike/mrtviCas-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 12:19:23
+(epstopdf)                    size: 24065 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/mrtviCas-eps-converted-to.pdf Slike/mrtviCas.eps>
+(epstopdf)             \includegraphics on input line 496.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/mrtviCas-eps-converted-to.pdf, id=501, 559.08875pt x 293.095pt>
+File: Slike/mrtviCas-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/mrtviCas-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/mrtviCas-eps-converted-to.pdf  used on input line 496.
+(pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
+Package epstopdf Info: Source file: <Slike/mrtviCasNapetost.eps>
+(epstopdf)                    date: 2025-02-23 12:19:21
+(epstopdf)                    size: 48989 bytes
+(epstopdf)             Output file: <Slike/mrtviCasNapetost-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 12:19:24
+(epstopdf)                    size: 17522 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/mrtviCasNapetost-eps-converted-to.pdf Slike/mrtviCasNapetost.eps>
+(epstopdf)             \includegraphics on input line 506.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/mrtviCasNapetost-eps-converted-to.pdf, id=503, 559.08875pt x 293.095pt>
+File: Slike/mrtviCasNapetost-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/mrtviCasNapetost-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/mrtviCasNapetost-eps-converted-to.pdf  used on input line 506.
+(pdftex.def)             Requested size: 412.56496pt x 216.28761pt.
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[21]
+[20]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[21
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.513 
+       <./Slike/Inkscape/mrtviCasRazlaga-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [22
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.16}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.513 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.17}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.513 
+       <./Slike/mrtviCas-eps-converted-to.pdf> <./Slike/mrtviCasNapetost-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Slike/mrtviCasFazniTok.eps>
+(epstopdf)                    date: 2025-02-23 12:19:24
+(epstopdf)                    size: 59732 bytes
+(epstopdf)             Output file: <Slike/mrtviCasFazniTok-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 12:19:25
+(epstopdf)                    size: 57573 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/mrtviCasFazniTok-eps-converted-to.pdf Slike/mrtviCasFazniTok.eps>
+(epstopdf)             \includegraphics on input line 516.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/mrtviCasFazniTok-eps-converted-to.pdf, id=529, 678.535pt x 452.69125pt>
+File: Slike/mrtviCasFazniTok-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/mrtviCasFazniTok-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/mrtviCasFazniTok-eps-converted-to.pdf  used on input line 516.
+(pdftex.def)             Requested size: 412.56496pt x 275.24327pt.
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[23
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.18}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.524 \chapter
+              {Integracija v FOC} \label{integracija} <./Slike/mrtviCasFazniTok-eps-converted-to.pdf>]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[24
 
 ]
   4.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[24]
-  5.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25
-
-]
-<Slike/Inkscape/PWM.pdf, id=504, 151.56625pt x 91.34125pt>
-File: Slike/Inkscape/PWM.pdf Graphic file (type pdf)
-<use Slike/Inkscape/PWM.pdf>
-Package pdftex.def Info: Slike/Inkscape/PWM.pdf  used on input line 559.
-(pdftex.def)             Requested size: 412.56496pt x 248.63722pt.
-
-Underfull \vbox (badness 2573) has occurred while \output is active []
-
+ [25]
+Package epstopdf Info: Source file: <Slike/brezudarniPreklop.eps>
+(epstopdf)                    date: 2025-02-23 13:43:06
+(epstopdf)                    size: 369731 bytes
+(epstopdf)             Output file: <Slike/brezudarniPreklop-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-23 13:43:14
+(epstopdf)                    size: 88490 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/brezudarniPreklop-eps-converted-to.pdf Slike/brezudarniPreklop.eps>
+(epstopdf)             \includegraphics on input line 555.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/brezudarniPreklop-eps-converted-to.pdf, id=549, 574.145pt x 523.9575pt>
+File: Slike/brezudarniPreklop-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/brezudarniPreklop-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/brezudarniPreklop-eps-converted-to.pdf  used on input line 555.
+(pdftex.def)             Requested size: 412.56496pt x 376.51358pt.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -2359,11 +2431,11 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [27
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.604 \chapter
-              {Zaključek} \label{zakljucek} <./Slike/Inkscape/PWM.pdf>]
+l.559 \chapter
+              {Eksperimenti}  \label{eksperimenti} <./Slike/brezudarniPreklop-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -2371,24 +2443,153 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [28
 
 ]
-  6.
-[29]
+  5.
+<Slike/EksperimentiSlika.jpg, id=568, 2457.18pt x 1842.885pt>
+File: Slike/EksperimentiSlika.jpg Graphic file (type jpg)
+<use Slike/EksperimentiSlika.jpg>
+Package pdftex.def Info: Slike/EksperimentiSlika.jpg  used on input line 566.
+(pdftex.def)             Requested size: 309.4237pt x 232.04727pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.579 
+       <./Slike/EksperimentiSlika.jpg>]
+Package epstopdf Info: Source file: <Slike/Inkscape/PWM.eps>
+(epstopdf)                    date: 2025-02-22 17:37:34
+(epstopdf)                    size: 68457 bytes
+(epstopdf)             Output file: <Slike/Inkscape/PWM-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-22 18:36:27
+(epstopdf)                    size: 25537 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/Inkscape/PWM-eps-converted-to.pdf Slike/Inkscape/PWM.eps>
+(epstopdf)             \includegraphics on input line 582.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/Inkscape/PWM-eps-converted-to.pdf, id=576, 152.57pt x 91.34125pt>
+File: Slike/Inkscape/PWM-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/Inkscape/PWM-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/Inkscape/PWM-eps-converted-to.pdf  used on input line 582.
+(pdftex.def)             Requested size: 412.56496pt x 247.00653pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [30
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.595 \end{equation}
+                     <./Slike/Inkscape/PWM-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Slike/Inkscape/inverter.eps>
+(epstopdf)                    date: 2025-02-22 18:23:54
+(epstopdf)                    size: 27223 bytes
+(epstopdf)             Output file: <Slike/Inkscape/inverter-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-22 18:36:27
+(epstopdf)                    size: 6115 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/Inkscape/inverter-eps-converted-to.pdf Slike/Inkscape/inverter.eps>
+(epstopdf)             \includegraphics on input line 605.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/Inkscape/inverter-eps-converted-to.pdf, id=592, 119.44624pt x 95.35625pt>
+File: Slike/Inkscape/inverter-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/Inkscape/inverter-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/Inkscape/inverter-eps-converted-to.pdf  used on input line 605.
+(pdftex.def)             Requested size: 309.4237pt x 247.0357pt.
+Package epstopdf Info: Source file: <Slike/Inkscape/meritevTokaIu.eps>
+(epstopdf)                    date: 2025-02-22 18:30:51
+(epstopdf)                    size: 77157 bytes
+(epstopdf)             Output file: <Slike/Inkscape/meritevTokaIu-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-22 18:36:28
+(epstopdf)                    size: 23468 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/Inkscape/meritevTokaIu-eps-converted-to.pdf Slike/Inkscape/meritevTokaIu.eps>
+(epstopdf)             \includegraphics on input line 615.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/Inkscape/meritevTokaIu-eps-converted-to.pdf, id=595, 128.48pt x 100.375pt>
+File: Slike/Inkscape/meritevTokaIu-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/Inkscape/meritevTokaIu-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/Inkscape/meritevTokaIu-eps-converted-to.pdf  used on input line 615.
+(pdftex.def)             Requested size: 309.4237pt x 241.75645pt.
+Package epstopdf Info: Source file: <Slike/Inkscape/meritevTokaIw.eps>
+(epstopdf)                    date: 2025-02-22 18:30:40
+(epstopdf)                    size: 77331 bytes
+(epstopdf)             Output file: <Slike/Inkscape/meritevTokaIw-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-22 18:36:29
+(epstopdf)                    size: 23562 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=Slike/Inkscape/meritevTokaIw-eps-converted-to.pdf Slike/Inkscape/meritevTokaIw.eps>
+(epstopdf)             \includegraphics on input line 623.
+Package epstopdf Info: Output file is already uptodate.
+<Slike/Inkscape/meritevTokaIw-eps-converted-to.pdf, id=597, 128.48pt x 100.375pt>
+File: Slike/Inkscape/meritevTokaIw-eps-converted-to.pdf Graphic file (type pdf)
+<use Slike/Inkscape/meritevTokaIw-eps-converted-to.pdf>
+Package pdftex.def Info: Slike/Inkscape/meritevTokaIw-eps-converted-to.pdf  used on input line 623.
+(pdftex.def)             Requested size: 309.4237pt x 241.75645pt.
 
-] (magistrska.bbl) [31
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[31]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[32
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.632 \end{equation}
+                    
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.632 \end{equation}
+                     <./Slike/Inkscape/inverter-eps-converted-to.pdf> <./Slike/Inkscape/meritevTokaIu-eps-converted-to.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[33
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.673 \chapter
+              {Zaključek} \label{zakljucek} <./Slike/Inkscape/meritevTokaIw-eps-converted-to.pdf>]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[34]
+  6.
+[35
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[32
+[36
 
-] [33] (magistrska.aux)
+] (magistrska.bbl) [37
+
+]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[38
+
+] [39] (magistrska.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -2401,20 +2602,20 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `magistrska.out' has not changed.
-(rerunfilecheck)             Checksum: C2A130474A00B16DC6E1DEB8C321414B;2840.
+(rerunfilecheck)             Checksum: 25F874223EFA872FD47B0F6B9BBE6F2B;2996.
  ) 
 Here is how much of TeX's memory you used:
- 21988 strings out of 474486
- 371087 string characters out of 5743755
+ 22068 strings out of 474486
+ 374152 string characters out of 5743755
  1938542 words of memory out of 5000000
- 43744 multiletter control sequences out of 15000+600000
+ 43809 multiletter control sequences out of 15000+600000
  568490 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,8n,93p,566b,2377s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,9n,93p,576b,2377s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/matic/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on magistrska.pdf (49 pages, 633691 bytes).
+Output written on magistrska.pdf (55 pages, 1691389 bytes).
 PDF statistics:
- 636 PDF objects out of 1000 (max. 8388607)
- 106 named destinations out of 1000 (max. 500000)
- 267 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 747 PDF objects out of 1000 (max. 8388607)
+ 121 named destinations out of 1000 (max. 500000)
+ 307 words of extra memory for PDF output out of 10000 (max. 10000000)
 
