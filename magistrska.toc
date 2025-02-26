@@ -9,15 +9,16 @@
 \contentsline {chapter}{\numberline {3}Delovanje HFSI}{7}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Induktivnost stroja}{7}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Vzbujanje z visoko frekvenco v d-q prostoru}{10}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Izračun pozicije rotorja}{15}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Vpliv mrtvega časa pretvornika}{20}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Integracija v FOC}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Inicializacija HFSI}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Začetni kot in izbira minimuma}{26}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Brezudarni preklop v delovanje opazovalnika}{26}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Eksperimenti}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Trifazni PWM in meritev toka}{30}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Rezultati}{33}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Primerjava ...}{34}{subsection.5.2.1}%
-\contentsline {chapter}{\numberline {6}Zaključek}{35}{chapter.6}%
-\contentsline {chapter}{Literatura}{37}{section*.8}%
+\contentsline {section}{\numberline {3.3}Izračun pozicije rotorja}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Vpliv mrtvega časa pretvornika}{22}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Integracija v FOC}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Inicializacija HFSI}{27}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Začetni kot in izbira minimuma}{28}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Brezudarni preklop v delovanje opazovalnika}{28}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Nastavitev parametrov PI regulatorja}{29}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Eksperimenti}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Trifazni PWM in meritev toka}{32}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Rezultati}{35}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Primerjava ...}{36}{subsection.5.2.1}%
+\contentsline {chapter}{\numberline {6}Zaključek}{37}{chapter.6}%
+\contentsline {chapter}{Literatura}{39}{section*.8}%

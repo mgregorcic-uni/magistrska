@@ -154,11 +154,16 @@ V pričujočem zaključnem delu so uporabljene naslednje veličine in simboli:
 %******************************* UVOD ******************************************
 \chapter{Uvod} \label{uvod}
 
-V industriji je vedno večja uporaba brezkrtačnih sinhronskih strojev, zaradi njihove specifične gostote moči in dobre učinkovitosti. Vendar pa za vodenje takih motorjev potrebujemo dražje in bolj
-kompleksne gonilnike, kar pa poveča ceno. Zato se za vodenje uporabijo brezsenzorski algoritmi, ki omogočajo vodenje brezkrtačnih strojev brez uporabe senzorja pozicije, obenem pa to poveča robustnost
-pogona, saj izključi dodatno mehansko komponentno. Večina brezsenzorskih algotimov pa deluje na principu opazovalnika pozicije, ki estimira inducirano napetost stroja, ta pa je pri nizkih obratih
-premajhna za uporabo le-teh, zato je potrebno za visoke navore pri nizkih obratih uporabiti drugo metodo. V našem primeru pogona, se v bremenu nahaja emulzija olja in vode, ki pri nizkih temperaturah
-zamrzne in poveča bremenski navor. Zato je nastala potreba po višjih navorih pri nizkih obratih in uporaba HFSI algoritma.
+V industriji se opazi vedno večja uporaba brezkrtačnih sinhronskih strojev, zaradi njihove specifične gostote moči in dobre učinkovitosti. Vendar pa za vodenje takih motorjev potrebujemo dražje in
+bolj kompleksne gonilnike, kar pa poveča ceno. Zato se za vodenje uporabijo brezsenzorski algoritmi, ki omogočajo vodenje brezkrtačnih strojev brez uporabe senzorja pozicije, obenem pa to poveča
+robustnost pogona, saj izključi dodatno mehansko komponentno. V našem primeru, se v bremenu pogona nahaja emulzija olja in vode, ki pri nizkih temperaturah zamrzne in poveča bremenski navor. Zato je
+nastala potreba po višjih navorih pri nizkih obratih in uporaba HFSI algoritma. 
+\\
+Večina brezsenzorskih algotimov deluje na principu opazovalnika pozicije, ki estimira inducirano napetost stroja, ta pa je pri nizkih obratih
+premajhna za uporabo le-teh, zato je potrebno za visoke navore pri nizkih obratih uporabiti drugo metodo. Praktično vse metode za estimacijo pozicije v nevrtečem stanju ali pri nizkih vrtilnih hitrostih
+temeljijo na zaznavanju izraženosti polov rotorja. To delo predstavi teoretično analizo delovanja algoritma, največja odstopanja realnega sistema od idealnega in pokaže implementacijo sistema v
+brezsenzorski sistem, ki uporablja FOC algoritem.
+
 
 
 %******************************* POGLAVJA **************************************
@@ -227,7 +232,7 @@ vseh takih metod je vzbujanje statorja z dodatno napetostno komponento, ki je su
 signal, ki vzbuja le vzdolžno komponentno in tako minimizira moteč navor zaradi vzbujalne napetosti. HFSI algoritem pa uporablja vrteč signal, ki vzbuja tudi prečno komponentno. 
 
 Zaznavanje začetne pozicije rotorja v nevrtečem stanju je prav tako pomembna, saj omogoča takojšnje delovanje z visoko učinkovitostjo, prav tako pa izniči možnost vrtenja v napačno smer. Za zaznavanje
-začetne pozicije se ponovno izkorišča izraženost polov in je opisano v \cite{IPDBoussak}.
+začetne pozicije se prav tako izkorišča izraženost polov in je opisano v \cite{IPDBoussak}.
 
 \chapter{Delovanje HFSI} \label{teorija}
 
@@ -355,8 +360,9 @@ rotorjem - gnanim ročno - in FKS (HKS je za pi/4 zamaknjen od FKS).
     \caption{\label{tokovniOdzivKot45} Primer vključitve slike.}
 \end{figure}
 
-Na sliki \ref{tokovniOdzivKot0} je bil koordinatni sistem HKS poravnan s SKS - torej je bila vzdolžna od HKS poravnana z osjo $\alpha$ SKS, na sliki \ref{tokovniOdzivKot45} pa je bil HKS za 45 stopinj
-odmaknjen od SKS. Opazimo, da je že tukaj nekaj odstopanja. V delovanju HFSI metode, kjer se HKS vrti napram SKS, bomo dobili različne odzive, odvisno od trenutnega odklona HKS. 
+Na sliki \ref{tokovniOdzivKot0} je bil koordinatni sistem HKS poravnan s SKS - torej je bila vzdolžna os HKS poravnana z osjo $\alpha$ SKS, na sliki \ref{tokovniOdzivKot45} pa je bil HKS za 45 stopinj
+odmaknjen od SKS. Opazimo, da je že tukaj nekaj odstopanja. V delovanju HFSI metode, kjer se HKS vrti napram SKS, bomo dobili različne odzive, odvisno od trenutnega odklona HKS, tudi če bo HFSI
+pravilno estimiral odklon.
 \\
 Dodatno nam odziv kvarita vzdolžna in prečna tokova, ki ju uporabljamo za tvorjenje navora, pri metodah MTPA in slabljenje polja pa poleg prečne tudi tok vzdolžne komponente ni ničelen. Ta dva tokova
 dodatno magnetita jedro rotorja, kar spremeni magnetne razmere v stroju, kot je prikazano na slikah \ref{tokovniOdzivId} - \ref{tokovniOdzivIq_IqAmp}:
@@ -367,7 +373,7 @@ dodatno magnetita jedro rotorja, kar spremeni magnetne razmere v stroju, kot je 
     \caption{\label{tokovniOdzivId} Primer vključitve slike.}
 \end{figure}
 
-Vidimo, da vzdolžni tok možno zmanjša induktivnost v d smeri, v q smeri pa je odziv relativno konstanten pri različnih vzdolžnih tokovnih.
+Vidimo, da vzdolžni tok močno zmanjša induktivnost v d smeri, v q smeri pa je odziv relativno nespremenljiv po različnih vzdolžnih tokovnih.
 Vzbujanje s prečnim tokom pa je prikazano na dveh slikah, na sliki \ref{tokovniOdzivIq_IdAmp} je prikazan odziv v vzdolžni smeri HKS, na sliki \ref{tokovniOdzivIq_IqAmp} pa prečni. 
 
 \begin{figure}[!htbp]
@@ -399,6 +405,38 @@ ničelno vrednost, z vrtenjem rotorja pa umetno ustvarjamo napako estimirane poz
     \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivIs_IqAmp.eps}
     \caption{\label{tokovniOdzivIs_IqAmp} Primer vključitve slike.}
 \end{figure}
+
+Na slikah \ref{tokovniOdzivIs_IdAmp} in \ref{tokovniOdzivIs_IqAmp} je TODO Komentiraj.
+
+Dodatna meritev, ki pokaže ne-idealnost sistema je primer, kjer HKS odmaknemo od RKS za $\frac{\pi}{4}$ - torej morata biti amplitudi tokovnega odziva v HKS enaki. Prečni tok parametriziramo in
+opazujemo njegov vpliv na amplitudi. Odklon RKS od SKS je znan in merjen z dajalnikom pozicije, nato pa rotor počasi vrtimo.  V idealnem primeru bi morali dobiti konstanten odziv enakih amplitud v
+obeh smereh, vendar zaradi raznih vplivov dobimo na odzivu motnje, ki kvarijo estimacijo pozicije. To je prikazano na slikah \ref{tokovniOdzivIs_HKSslediRKS_IdAmp} -
+\ref{tokovniOdzivIs_HKSslediRKS_diff}, kjer je prikazana amplituda v vzdolžni smeri (\ref{tokovniOdzivIs_HKSslediRKS_IdAmp}), prečni smeri (\ref{tokovniOdzivIs_HKSslediRKS_IqAmp}) in razlika, ki jo
+reguliramo (\ref{tokovniOdzivIs_HKSslediRKS_diff}). 
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivIs_HKSslediRKS_IdAmp.eps}
+    \caption{\label{tokovniOdzivIs_HKSslediRKS_IdAmp} Primer vključitve slike.}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivIs_HKSslediRKS_IqAmp.eps}
+    \caption{\label{tokovniOdzivIs_HKSslediRKS_IqAmp} Primer vključitve slike.}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivIs_HKSslediRKS_diff.eps}
+    \caption{\label{tokovniOdzivIs_HKSslediRKS_diff} Primer vključitve slike.}
+\end{figure}
+
+Najprej se opazi, da se povprečna amplituda z višanjem prečnega toka povečuje, bolj pomembno pa je izrazito povečanje višje-harmonske komponente, ki nam kvari odziv. Na sliki
+\ref{tokovniOdzivIs_HKSslediRKS_IqAmp} se to hitreje opazi, saj je prikazana razlika in višja povprečna amplituda obeh signalov ni pomembna, višje-harmonska komponenta pa pride do izraza v regulirani
+veličini, kar nam kvari estimacijo pozicije. To je prikazano v zadnjem poglavju. 
+
+Tukaj bi dodali, da je nominalen fazni tok motorja 18A. TODO vprašanje za profesorja?
 
 %-> Odziv odvisen od odklona hfsi, verjetno zaradi magnetne asimetrije
 %
@@ -524,7 +562,7 @@ Vpliv mrtvega časa na oceno pozicije pa je prikazan v zadnjem poglavju.
 \chapter{Integracija v FOC} \label{integracija}
 
 Za uspešno implementacijo HFSI algoritma, ga je potrebno tudi pravilno integrirati v celotno FOC vodenje. Potrebno je poskrbeti za pravilno inicializacijo algoritma, filtriranje tokovne povratne
-zanke, zadnji element pa je preklop v delovanje opazovalnika, ko vrtilna hitrost doseže dovolj visoko vrednost.
+zanke, zadnji element pa je preklop v delovanje opazovalnika, ko vrtilna hitrost doseže dovolj visoko vrednost. Na koncu je predstavljen postopek uglaševanja PI regulatorja.
 
 \section{Inicializacija HFSI}
 
@@ -538,6 +576,23 @@ lahko filtrirane tokove $I_d$ in $I_q$ direktno uporabimo za tokovno regulacijo.
 Ob zagonu prvih nekaj period vzbujalnega signala FOC regulatorje izklopimo, da se prehodni pojav pasovnih filtrov ustali. 
 
 \section{Začetni kot in izbira minimuma}
+
+Ob inicializaciji HFSI algoritma, moramo določiti začetno pozicijo in tako primerno tudi postaviti HKS v stabilno točko regulacije - do sedaj smo vedno definirali to točko kot odklon od RKS za
+$\frac{\pi}{4}$. Smo pa že matematičnem zapisu tokovnih odzivov in tudi realnih odzivov opazili, da so štiri stabilne regulacijske točke - torej tisti odkloni HKS od RKS, kjer ima razlika amplitudnih
+odzivov ali regulirana veličina vrednost nič. Tako bi pričakovali, da je lahko tudi odklon HKS od RKS poljuben, oziroma bolj točno $\frac{\pi}{4} + k\frac{\pi}{2}$, kjer je k poljubno naravno število.
+Nato pa smo pokazali z meritvijo, prikazano na sliki \ref{reguliranaVelicinaIs}, da se regulirana veličina okoli stabilnih točk pri višjih prečnih tokovih obnaša drugače. V dveh točkah je linearna, v
+drugih dveh pa ima v eni smeri drugačen naklon kot v drugi. Torej bi pričakovali, da bi dobili tudi drugačno obnašanje algoritma v različnih točkah, vendar pa se je izkazalo, da algoritem ni tako
+občutljiv in niti ni važno v katero začetno stabilno točko ga postavimo (četudi ga v končni implementaciji vedno postavimo v stabilno točko, ki ima najbolj linearno okolico). Tukaj moramo paziti, da
+ne ustvarimo pozitivne povratne zanke s postavitvijo v napačno začetno stabilno točko. HKS lahko postavimo v katerokoli od štirih obstoječih, vendar ima regulirana veličina okoli dveh pozitiven
+naklon, okoli drugih dveh pa negativen. Če ne spremenimo predznaka regulirane veličine v dveh stabilnih točkah, kjer ima ta negativen naklon bo nastala pozitivna povratna zanka, ki destabilizira sistem.
+
+Na sliki \ref{zacetnaStabilnaTocka} so prikazani odzivi v različnih točkah.
+
+%\begin{figure}[!htbp]
+%    \centering
+%    \includegraphics[width=1\columnwidth]{Slike/zacetnaStabilnaTocka.eps}
+%    \caption{\label{zacetnaStabilnaTocka} Preklop v delovanje opazovalnika pozicije. }
+%\end{figure}
 
 \section{Brezudarni preklop v delovanje opazovalnika}
 
@@ -555,6 +610,16 @@ pa je prikazana napaka ocenjenega kota. Po preklopu se opazi minimalen prenihaj.
     \includegraphics[width=1\columnwidth]{Slike/brezudarniPreklop.eps}
     \caption{\label{brezudarniPreklop} Preklop v delovanje opazovalnika pozicije. }
 \end{figure}
+
+\section{Nastavitev parametrov PI regulatorja}
+
+Parametri regulatorja so bili nastavljeni ročno in sicer z opazovanjem delovanja algoritma pri različnih parametrih. Za kriterijsko funkcijo smo izbrali napako ocenjenega kota in je bila najprej pomerjena
+pri 10 različnih $K_p$ parametrih, kjer je imel parameter $K_i$ neko začetno vrednost, pri kateri je bil algoritem stabilen. Nato se je izbral $K_p$ z najmanjšo napako in ponovno pomeril odziv s tem
+parametrom in različnimi $K_i$ parametri. Tako smo pridobili $K_p$ in $K_i$ s prvo iteracijo, nato pa se izvedla dodatna iteracija, da smo prišli do optimalnih parametrov. 
+\\
+V prvi iteraciji je bil obseg vrednosti parametrov, pri katerij se je meril odziv tak, da je algoritem pri robnih vrednostih postal nestabilen. Ko se je izvajala druga iteracija pa se je obseg
+parametrov zmanjšal in je bil okoli vrednosti, pridobljene s prvo iteracijo.
+\\
 
 \chapter{Eksperimenti}  \label{eksperimenti}
 
