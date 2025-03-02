@@ -7,33 +7,50 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Presek IPMSM stroja.}}{3}{figure.2.1}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Shema brezsenzorskega FOC vodenja.}}{5}{figure.2.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Shema HFSI algoritma.}}{8}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Koordinatni sistemi uporabljeni v HFSI algoritmu}}{9}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Induktivnost stroja}}{10}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Primer vključitve slike.}}{13}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Primer vključitve slike.}}{13}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Primer vključitve slike.}}{14}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Primer vključitve slike.}}{14}{figure.3.7}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Primer vključitve slike.}}{15}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Primer vključitve slike.}}{16}{figure.3.9}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Primer vključitve slike.}}{16}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Primer vključitve slike.}}{17}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Primer vključitve slike.}}{18}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Primer vključitve slike.}}{18}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Primer vključitve slike.}}{19}{figure.3.14}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Primer vključitve slike.}}{20}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Primer vključitve slike.}}{20}{figure.3.16}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Primer vključitve slike.}}{21}{figure.3.17}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Napetost faze ko sta oba tranzistorja zaprta}}{23}{figure.3.18}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Odvisnost popačenja amplitude odziva od dolžine mrtvega časa}}{24}{figure.3.19}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Odvisnost popačenja amplitude odziva od napajalne napetosti }}{24}{figure.3.20}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Vpliv mrtvega časa na faznem toku }}{25}{figure.3.21}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Shema HFSI algoritma.}}{7}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Uporabljeni koordinatni sistemi}}{8}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Induktivnost stroja. }}{9}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces $\hat {i}_{dh}$ in $\hat {i}_{qh}$ pri odklonu 0°.}}{12}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces $\hat {i}_{dh}$ in $\hat {i}_{qh}$ pri odklonu 45°.}}{12}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Vpliv enosmerne vzdolžne tokovne komponentne na $\hat {i}_{dh}$ in $\hat {i}_{qh}$.}}{13}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Vpliv enosmerne prečne tokovne komponentne na $\hat {i}_{dh}$.}}{14}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Vpliv enosmerne prečne tokovne komponentne na $\hat {i}_{qh}$.}}{14}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Vpliv enosmerne prečne tokovne komponentne na $\hat {i}_{dh}$ pri različnih odklonih rotorja od FKS.}}{15}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Vpliv enosmerne prečne tokovne komponentne na $\hat {i}_{qh}$ pri različnih odklonih rotorja od FKS.}}{16}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Neidealnost $\hat {i}_{dh}$ pri različnih prečnih tokovih, kjer HKS sledi RKS.}}{17}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Neidealnost $\hat {i}_{qh}$ pri različnih prečnih tokovih, kjer HKS sledi RKS.}}{17}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces $\hat {i}_{e}$ pri odklonu 0° in 45°.}}{18}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Vpliv enosmerne prečne tokovne komponentne na $\hat {i}_{e}$ pri različnih odklonih rotorja od FKS.}}{19}{figure.3.14}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Neidealnost $\hat {i}_{e}$ pri različnih prečnih tokovih, kjer HKS sledi RKS.}}{20}{figure.3.15}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Napetost faze ko sta oba tranzistorja zaprta}}{21}{figure.3.16}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Odvisnost popačenja amplitude odziva od dolžine mrtvega časa}}{22}{figure.3.17}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Odvisnost popačenja amplitude odziva od napajalne napetosti }}{22}{figure.3.18}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Vpliv mrtvega časa na faznem toku }}{23}{figure.3.19}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Vpliv prečnega toka na popačenje $\hat {i}_{dh}$ zaradi mrtvega časa. }}{24}{figure.3.20}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Vpliv prečnega toka na popačenje $\hat {i}_{qh}$ zaradi mrtvega časa. }}{24}{figure.3.21}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Vpliv prečnega toka na popačenje $\hat {i}_{e}$ zaradi mrtvega časa. }}{24}{figure.3.22}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Preklop v delovanje opazovalnika pozicije. }}{30}{figure.4.1}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Preklop v delovanje opazovalnika pozicije. }}{29}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Prikaz vpliva premajhnega $K_p$ parametra. }}{30}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Prikaz vpliva prevelikega $K_p$ parametra. }}{31}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Prikaz vpliva optimalnega $K_p$ parametra. }}{31}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Prikaz vpliva premajhnega $K_i$ parametra. }}{32}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Prikaz vpliva prevelikega $K_i$ parametra. }}{32}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Prikaz vpliva optimalnega $K_i$ parametra. }}{33}{figure.4.7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Fotografija močnostnega pretvornika in stroja}}{31}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Pulzno širinska modulacija močnostnega pretvornika }}{32}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Shema močnostnega pretvornika in meritve toka }}{34}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Shema močnostnega pretvornika in meritve toka }}{34}{figure.5.4}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Shema močnostnega pretvornika in meritve toka }}{35}{figure.5.5}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Fotografija močnostnega pretvornika in stroja}}{35}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Pulzno širinska modulacija močnostnega pretvornika }}{36}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Shema močnostnega pretvornika in meritve toka }}{37}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Meritev toka $i_u$ }}{38}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Meritev toka $-i_w$ }}{38}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Fazne napetosti in ojačan signal shunta. }}{39}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Ocena pozicije rotorja brez dodatnega bremena. }}{40}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Ocena pozicije rotorja pri zelo nizkih hitrostih. }}{40}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Ocena kota pri različnih prečnih tokovih. }}{41}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Napaka ocene kota pri različnih prečnih tokovih. }}{41}{figure.5.10}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Ocena kota pri različnih mrtvih časih. }}{42}{figure.5.11}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Napaka ocene kota pri različnih mrtvih časih. }}{43}{figure.5.12}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Ocena kota pri različnih prečnih tokovih in velikim vrtvim časom. }}{43}{figure.5.13}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Napaka ocene kota pri različnih prečnih tokovih in velikim vrtvim časom. }}{44}{figure.5.14}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Izbira delovne točke obratovanja regulatorja. }}{45}{figure.5.15}%
 \addvspace {10\p@ }

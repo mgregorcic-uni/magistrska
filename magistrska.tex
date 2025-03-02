@@ -106,10 +106,10 @@
 
 %******************************* KAZALO ****************************************
 \tableofcontents
-75095
+
 %******************************* SEZNAM SLIK, SEZNAM TABEL *********************
 \seznamslik
-\seznamtabel
+%\seznamtabel
 
 %******************************* SEZNAM SIMBOLOV *******************************
 \seznamsimbolov
@@ -119,13 +119,13 @@ V pričujočem zaključnem delu so uporabljene naslednje veličine in simboli:
     \begin{tabular}{*{4}{l}} \hline
         \multicolumn{2}{c}{\bf{Veličina / oznaka}}           & \multicolumn{2}{c}{\bf{Enota}} \\ \hline
         Ime                                                        & Simbol                                 & Ime                  & Simbol                 \\ \hline
-        Vzbujanje z visokofrekvečnim signalom                      & HFSI                                   & sekunda              & s                      \\
+        Vzbujanje z visokofrekvečnim signalom                      & HFSI                                   & -                    & -                      \\
         Rotorski koordinatni sistem                                & RKS                                    & -                    & -                      \\
         Statorski koordinatni sistem                               & SKS                                    & -                    & -                      \\
         Koordinatni sistem HFSI metode                             & HKS                                    & -                    & -                      \\
         FOC koordinatni sistem                                     & FKS                                    & -                    & -                      \\
         Regulacija z orientacijo polja                             & FOC                                    & -                    & -                      \\
-        Sinhronski motor z vlitimi permanentnimi magneti           & IPM                                    & -                    & -                      \\
+        Sinhronski motor z vlitimi permanentnimi magneti           & IPMSM                                  & -                    & -                      \\
         Fazno zaklenjena zanka                                     & PLL                                    & -                    & -                      \\
         Visoka frekvenca                                           & VF                                     & -                    & -                      \\
         Prepustni pasovni filter                                   & BPF                                    & -                    & -                      \\
@@ -134,18 +134,19 @@ V pričujočem zaključnem delu so uporabljene naslednje veličine in simboli:
         koordinati SKS                                             & $\alpha$; $\beta$                      & -                    & -                      \\
         koordinati RKS                                             & $d$; $q$                               & -                    & -                      \\
         koordinati HKS                                             & $dh$; $qh$                             & -                    & -                      \\
+        koordinati FKS                                             & $df$; $qf$                             & -                    & -                      \\
         električni kot rotorja                                     & $\theta_{r}$                           & radian               & rad                    \\
         odklon FKS                                                 & $\theta_{f}$                           & radian               & rad                    \\
         odklon HKS                                                 & $\theta_{h}$                           & radian               & rad                    \\
-        Induktivnost v d in q smeri                                & $L_d; L_q$                             & Henry                & H                      \\
+        Induktivnost v vzdolžni in prečni smeri                    & $L_d; L_q$                             & Henry                & H                      \\
         Statorska upornost                                         & $R_s$                                  & ohm                  & $\Omega$               \\
         električna kotna hitrost rotorja                           & $\omega_r$                             & radian na sekundo    & $rad \cdot s^{-1}$     \\
-        Frekvenca vzbujalnega signala                              & $f_{s}$                                & hertz                & Hz                     \\
+        Frekvenca vzbujalnega signala                              & $\omega_{s}$                           & radian na sekundo    & $rad \cdot s^{-1}$     \\
         število polov                                              & $p$                                    & -                    & -                      \\
-        Napetost v d in q smeri                                    & $U_{d}; U_{q}$                         & volt                 & V                      \\
-        Tok v d in q smeri                                         & $I_{d}; I_{q}$                         & ampere               & A                      \\
-        VF napetostno vzbujanje                                    & $U^{VF}_{d}; U^{VF}_{q}$               & volt                 & V                      \\
-        VF tokovni odziv                                           & $I^{VF}_{d}; I^{VF}_{q}$               & ampere               & A                      \\
+        Napetost v vzdolžni in prečni smeri                        & $u_{d}; u_{q}$                         & volt                 & V                      \\
+        Tok v vzdolžni in prečni smeri                             & $i_{d}; i_{q}$                         & ampere               & A                      \\
+        VF napetostno vzbujanje                                    & $u^{VF}_{dh}; u^{VF}_{qh}$             & volt                 & V                      \\
+        VF tokovni odziv                                           & $i^{VF}_{dh}; i^{VF}_{qh}$             & ampere               & A                      \\
     \end{tabular}
 \end{center}
 
@@ -156,13 +157,14 @@ V pričujočem zaključnem delu so uporabljene naslednje veličine in simboli:
 
 V industriji se opazi vedno večja uporaba brezkrtačnih sinhronskih strojev, zaradi njihove specifične gostote moči in dobre učinkovitosti. Vendar pa za vodenje takih motorjev potrebujemo dražje in
 bolj kompleksne gonilnike, kar pa poveča ceno. Zato se za vodenje uporabijo brezsenzorski algoritmi, ki omogočajo vodenje brezkrtačnih strojev brez uporabe senzorja pozicije, obenem pa to poveča
-robustnost pogona, saj izključi dodatno mehansko komponentno. V našem primeru, se v bremenu pogona nahaja emulzija olja in vode, ki pri nizkih temperaturah zamrzne in poveča bremenski navor. Zato je
-nastala potreba po višjih navorih pri nizkih obratih in uporaba HFSI algoritma. 
+robustnost pogona, saj izključi dodatno mehansko komponentno. 
 \\
-Večina brezsenzorskih algotimov deluje na principu opazovalnika pozicije, ki estimira inducirano napetost stroja, ta pa je pri nizkih obratih
-premajhna za uporabo le-teh, zato je potrebno za visoke navore pri nizkih obratih uporabiti drugo metodo. Praktično vse metode za estimacijo pozicije v nevrtečem stanju ali pri nizkih vrtilnih hitrostih
-temeljijo na zaznavanju izraženosti polov rotorja. To delo predstavi teoretično analizo delovanja algoritma, največja odstopanja realnega sistema od idealnega in pokaže implementacijo sistema v
-brezsenzorski sistem, ki uporablja FOC algoritem.
+Večina brezsenzorskih algotimov deluje na principu opazovalnika pozicije, ki estimira inducirano napetost stroja, ta pa je pri nizkih obratih premajhna za uporabo le-teh, zato je potrebno za robusten
+zagon pri nizkih obratih in visokem bremenskem navoru uporabiti drugo metodo. V našem primeru, se v bremenu pogona nahaja emulzija olja in vode, ki pri nizkih temperaturah zamrzne in poveča bremenski
+navor. Zato je nastala potreba po višjih navorih pri nizkih obratih in uporaba HFSI algoritma. 
+\\
+Praktično vse metode za estimacijo pozicije v nevrtečem stanju ali pri nizkih vrtilnih hitrostih temeljijo na zaznavanju izraženosti polov rotorja. To delo predstavi teoretično analizo delovanja
+algoritma, največja odstopanja realnega sistema od idealnega in pokaže implementacijo sistema v brezsenzorski sistem, ki uporablja FOC algoritem.
 
 
 
@@ -173,7 +175,8 @@ brezsenzorski sistem, ki uporablja FOC algoritem.
 Sinhronske stroje v grobem delimo na stroje s površinsko nameščenimi magneti (SPMSM) in s potopljenimi magneti (IPMSM). Glavna razlika med izvedbama sta prečna in vzdolžna induktivnost rotorskega
 koordinatnega sistema (RKS), kjer sta pri prvi ti dve enaki ($L_d = L_q$), pri drugi pa je ena večja od druge ($L_d \neq L_q$). Pri IPMSM se ta razlika pojavi zaradi neheterogene sestave rotorja, saj
 imamo v jedru poleg železa tudi permanetne magnete, katerih permeabilnost je nekaj razredov nižja od železa, ta pa vpliva na induktivnost. Ta je premo sorazmerna z permeabilnostjo, kar pomeni da je
-induktivnost v smeri permanentnih magnetov, torej vzdolžne komponente - manjša. \\
+induktivnost v smeri permanentnih magnetov, torej vzdolžne komponente - manjša. 
+\\
 Kot bo razvidno v sledečih poglavjih, je razlika $L_d$ in $L_q$ ključna za delovanje HFSI algoritma. 
 
 \begin{figure}[!htbp]
@@ -216,57 +219,60 @@ tok. Pri IPMSM pa je poleg sinhronskega navora prisoten tudi reluktančni navor,
 Za doseganje višje končne vrtilne hitrosti pa se uporablja metoda slabljenja polja, kjer se z vzdolžno komponento slabi magnetno polje rotorskih magnetov in s tem zniža efekt inducirane
 napetosti\cite{ambrovzivc2016elektrivcni}.
 
-Na sliki \ref{FOCshema} je prikazana shema FOC regulacije sistema, ki vključuje HFSI algoritem. Ker se v sistemu ne uporablja nobena od omenjenih metod, je željena vrednost toka vzdolžne komponente enaka 0.
+Na sliki \ref{FOCshema} je prikazana shema FOC regulacije sistema, ki vključuje HFSI algoritem. Ker se v sistemu ne uporablja nobena od omenjenih metod, je željena vrednost toka vzdolžne komponente
+enaka 0.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.75\columnwidth]{Slike/Inkscape/FOC.eps}
+    \includegraphics[width=1\columnwidth]{Slike/Inkscape/FOC.eps}
     \caption{\label{FOCshema} Shema brezsenzorskega FOC vodenja.}
 \end{figure}
 
-Ker se uporablja brezsenzorsko vodenje, je potrebno odklon rotorja estimirati iz merjenega toka. Pri višji vrtilni hitrosti se za to uporablja opazovalnik pozicije. Ta z uporabo modela motorja, merjenega
-kota in znane pritisnjene napetosti estimira inducirano napetost, ki pa je funkcija odklona rotorja. Z uporabo fazno zaklenjene zanke (PLL) pa se iz inducirane napetosti estimira odklon rotorja TODO
-citat.
-Opisana metoda odpove pri nižjih hotrostih, kjer je inducirana napetost premajhna oziroma ničelna v nevrtečem stanju. V takih pogojih se uporabljajo metode, ki izkoriščajo izraženost polov \cite{ThreeYearsOfExperience}. Skupnost
-vseh takih metod je vzbujanje statorja z dodatno napetostno komponento, ki je superponirana osnovno, ki tvori navor. Nekatere metode vzbujajo stator med vsako PWM periodo, druge uporabljajo pulzirajoč
-signal, ki vzbuja le vzdolžno komponentno in tako minimizira moteč navor zaradi vzbujalne napetosti. HFSI algoritem pa uporablja vrteč signal, ki vzbuja tudi prečno komponentno. 
+Ker se uporablja brezsenzorsko vodenje, je potrebno odklon rotorja estimirati iz merjenega toka. Pri višji vrtilni hitrosti se za to uporablja opazovalnik pozicije. Ta z uporabo modela motorja,
+merjenega kota in znane pritisnjene napetosti estimira inducirano napetost, ki pa je funkcija odklona rotorja. Z uporabo fazno zaklenjene zanke (PLL) pa se iz inducirane napetosti estimira odklon
+rotorja.
+\\
+Opisana metoda odpove pri nižjih hotrostih, kjer je inducirana napetost premajhna oziroma ničelna v nevrtečem stanju. V takih pogojih se uporabljajo metode, ki izkoriščajo izraženost polov
+\cite{ThreeYearsOfExperience}. Skupnost vseh takih metod je vzbujanje statorja z dodatno napetostno komponento, ki je superponirana osnovno, ki tvori navor. Nekatere metode uporabljajo pulzirajoč
+signal, ki vzbuja le vzdolžno komponentno in tako minimizira moteč navor zaradi vzbujalne napetosti \cite{955987}. HFSI algoritem pa uporablja vrteč signal, ki vzbuja tudi prečno komponentno.
 
 Zaznavanje začetne pozicije rotorja v nevrtečem stanju je prav tako pomembna, saj omogoča takojšnje delovanje z visoko učinkovitostjo, prav tako pa izniči možnost vrtenja v napačno smer. Za zaznavanje
 začetne pozicije se prav tako izkorišča izraženost polov in je opisano v \cite{IPDBoussak}.
 
 \chapter{Delovanje HFSI} \label{teorija}
 
-%TODO povsod odklon HKS od RKS uporabi določen simbol za ta kot
-
-V tem poglavju je opisano delovanje HFSI metode. Ker metoda stoji na predpostavki, da se induktivnost v d in q smeri razlikujeta, je najprej predstavljena induktivnost stroja, nato je
-opisan postopek vzbujanja statorja z visoko frekvenco, nato pa izračun estimiranega kota. Na koncu je opisana integracija algoritma v FOC.
-\\
-V klasičnem FOC vodenju 3 faznega stroja se fazne veličine z uporabo Clarkine transformacije pretvorijo v 2 fazni sistem, nato pa z uporabo Parkove transformacije v d-q k.s. Pri HFSI metodi pa se
-uporablja dodaten d-q k.s., HKS, v katerem vzbujamo stator in tokovni odziv uporabljamo za vodenje odklona HKS. Na sliki \ref{hfsiMetoda} je prikazana shema HFSI algoritma.
+V tem poglavju je opisano delovanje HFSI metode. Ker metoda stoji na predpostavki, da se induktivnost v vzdolžni in prečni smeri razlikujeta, je najprej predstavljena induktivnost stroja, nato je
+opisan postopek vzbujanja statorja z visoko frekvenco, nato pa izračun estimiranega kota. Na koncu je opisana integracija algoritma v FOC. Na sliki \ref{hfsiMetoda} je prikazana shema HFSI algoritma.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/Inkscape/HFSI.eps}
+    \includegraphics[width=0.9\columnwidth]{Slike/Inkscape/HFSI.eps}
     \caption{\label{hfsiMetoda} Shema HFSI algoritma.}
 \end{figure}
 
+V klasičnem FOC vodenju trofaznega stroja se fazne veličine z uporabo Clarkine transformacije pretvorijo v dvofazni sistem, nato pa z uporabo Parkove transformacije v d-q k.s, FKS. Pri HFSI metodi pa se
+uporablja dodaten d-q k.s., HKS, v katerem vzbujamo stator in tokovni odziv uporabljamo za estimacijo odklona HKS. Na sliki \ref{koordinatniSistem} so prikazani uporabljeni koordinatni sistemi, RKS pa
+ima dodano induktivnostno ovojnico, preko katere ocenjujemo pozicijo rotorja.
+
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.75\columnwidth]{Slike/Inkscape/koordinatniSistem.eps}
-    \caption{\label{koordinatniSistem} Koordinatni sistemi uporabljeni v HFSI algoritmu}
+    \includegraphics[width=0.9\columnwidth]{Slike/Inkscape/koordinatniSistem.eps}
+    \caption{\label{koordinatniSistem} Uporabljeni koordinatni sistemi}
 \end{figure}
 
 \section{Induktivnost stroja}
-Razlika induktivnosti v d in q osi RKS se pojavi zaradi neheterogene sestave rotorja in je maksimalna v smeri q in minimalna v smeri d. Kot je prikazano na sliki TODO, je
-HKS zamaknjen za kot $\frac{pi}{4}$ od RKS. Ko je napaka estimacije kota enaka 0, sta induktivnosti v smeri d in q k.s. HKS enaki. Induktivnosti lahko matematično zapišemo kot:
+Razlika induktivnosti v vzdolžni in prečni smeri RKS se pojavi zaradi neheterogene sestave rotorja in je maksimalna v prečni smeri in minimalna v smeri vzdolžni. Kot je prikazano na sliki
+\ref{koordinatniSistem}, je HKS zamaknjen za kot $\frac{pi}{4}$ od FKS. Ko je napaka estimacije kota enaka 0, sta induktivnosti v smeri vzdolžni in prečni smeri HKS enaki. Induktivnosti lahko
+matematično zapišemo kot:
 
-\begin{center}
-    $L_{dh} = L_p + L_r cos(2\Delta\theta + \frac{pi}{2})$
+\begin{equation}
+    L_{dh} = L_p + L_r cos(2\Delta\theta + \frac{pi}{2})
+\end{equation}
+\begin{equation}
+    L_{qh} = L_p + L_r cos(2\Delta\theta - \frac{pi}{2})
+\end{equation}
 
-    $L_{qh} = L_p + L_r cos(2\Delta\theta - \frac{pi}{2})$
-\end{center}
-
-, kjer je $\Delta\Theta$ napaka estimirane pozicije.
+, kjer je $\Delta\theta$ napaka estimirane pozicije.
 \\
 Zapis induktivnosti s kosinusoidno funkcijo je le poenostavitev realnosti, ker niso vsi stroji konstruirani tako, da potek sledi sinusoidni krivulji. Oblika induktivnosti namreč pride iz geometrije
 rotorja - oblike izraženih polov rotorja. Dejanski potek induktivnosti je prikazan na sliki \ref{induktivnostStroja}, kjer je bila ta pomerjena z RLC metrom ene same faze, drugi dve pa sta bili
@@ -274,40 +280,35 @@ odklopljeni. Poleg tega nam odziv kvari tudi vzdolžni in prečni tok, kot bo pr
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/induktivnostStroja.eps}
-    \caption{\label{induktivnostStroja} Induktivnost stroja}
+    \includegraphics[width=0.95\columnwidth]{Slike/induktivnostStroja.eps}
+    \caption{\label{induktivnostStroja} Induktivnost stroja. }
 \end{figure}
 
-%To drži, dokler je d-q k.s. poravnan z rotorjem. Pri FOC
-%vodenju je d-os vzporedna z magnetno osjo rotorja, q-os pa je ortogonalna na njo. HKS pa ni poravnan z rotorjem in tudi ne drži, da bo induktivnost v q smeri tega k.s. najvišja in v d smeri najmanjša.
-%To je odvisno od naklona med HKS in RKS.
-%Slika TODO prikazuje induktivnost v smeri d in q v odvisnosti od odklona HKS od RKS.
-
-\section{Vzbujanje z visoko frekvenco v d-q prostoru}
+\section{Visokofrekvenčno vzbujanje statorja}
 Ker se bo pozicija estimirala preko induktivnosti, je le to potrebno meriti. En od načinov merjenja induktivnosti je preko merjenja impedance - tuljavo vzbujamo z izmenično napetostjo amplitude $U_s$
 neke frekvence $f_s$ in iz pomerjenega toka izračunamo upornost. Ta je za tuljavo, ki ima upornost $R_L$ in induktivnost $L$ naslednja:
 
-\begin{center}
-    $Z_L = R_L + X_L = R_L + j2\pi f_sL$
-\end{center}
+\begin{equation}
+    Z_L = R_L + X_L = R_L + j\omega_sL
+\end{equation}
 
 Če je $R_L$ znatno manjši od $X_L$ lahko zapišemo:
 
-\begin{center}
-    $Z_L \cong j2\pi f_sL$
-\end{center}
+\begin{equation}
+    Z_L \cong j\omega_sL
+\end{equation}
 
 Skozi tuljavo z nekim vzbujanjem, bi tekel naslednji tok:
 
-\begin{center}
-    $I = \frac{U}{Z_L} = \frac{U_s \sin{(2\pi f_s)}}{2\pi f_sL}$
-\end{center}
+\begin{equation}
+    I = \frac{U}{Z_L} = \frac{U_s \sin{(\omega_s)}}{\omega_sL}
+\end{equation}
 
 Amplituda tokovnega odziva, bi tako bila:
 
-\begin{center}
-    $\hat{I} = \frac{U_s}{2\pi f_sL}$
-\end{center}
+\begin{equation}
+    \hat{i} = \frac{U_s}{\omega_sL}
+\end{equation}
 
 V enačbah \ref{motorModelD} in \ref{motorModelQ} ob predpostavitvi, da se rotor ne vrti oz vrti z nizko frekvenco, zanemarimo člen inducirane napetosti in motor poenostavimo v RL vezje:
 
@@ -322,27 +323,29 @@ V enačbah \ref{motorModelD} in \ref{motorModelQ} ob predpostavitvi, da se rotor
 Pri dovolj visoki frekvenci vzbujanja se tudi predpostavi, da je statorska ohmska upornost mnogokrat manjša od reaktance in zapišemo amplitudo tokovnega odziva vzdolžne in prečne komponente HKS
 odvisne od induktivnosti.
 
-\begin{center}
-    $\hat{I}_{dh} = \frac{U_s}{2\pi f_sL_{dh}}$
-\end{center}
+\begin{equation}
+    \hat{i}_{dh} = \frac{u_s}{\omega_sL_{dh}}
+\end{equation}
 
-\begin{center}
-    $\hat{I}_{qh} = \frac{U_s}{2\pi f_sL_{qh}}$
-\end{center}
+\begin{equation}
+    \hat{i}_{qh} = \frac{u_s}{\omega_sL_{qh}}
+\end{equation}
 
 Ko vstavimo induktivnosti $L_{dh}$ in $L_{qh}$ v zgornjo enačbo, dobimo amplitudo tokovnega odziva v odvisnosti od odklona HKS od RKS.
-\begin{center}
-    $\hat{I}_{dh} = \frac{U_s}{2\pi f_s (L_p + L_r cos(2\Delta\theta + \frac{\pi}{2}))}$
-\end{center}
+\begin{equation}
+    \hat{i}_{dh} = \frac{u_s}{2\pi f_s (L_p + L_r cos(2\Delta\theta + \frac{\pi}{2}))}
+\end{equation}
 
-\begin{center}
-    $\hat{I}_{qh} = \frac{U_s}{2\pi f_s (L_p + L_r cos(2\Delta\theta - \frac{\pi}{2}))}$
-\end{center}
+\begin{equation}
+    \hat{i}_{qh} = \frac{u_s}{2\pi f_s (L_p + L_r cos(2\Delta\theta - \frac{\pi}{2}))}
+\end{equation}
 
-V realnem sistemu iz merjenega toka dobimo visoko frekvenčni odziv, ne pa direktno amplitude. To moramo izračunati iz odziva s pomočjo Fourierove transformacije. V digitalnih sistemih se velikokrat
-uporablja diskretna Fourierova transformacija (DFT), ki pa je za ta primer prepotratna, saj potrebujemo amplitudo signala pri le eni frekvenci - zato uporabimo Goertzelov algoritem.
-
-// TODO bolj natačno?
+V realnem sistemu iz merjenega toka dobimo visoko frekvenčni odziv, ne pa direktno amplitude. To moramo izračunati iz odziva in je bilo prvotno izvedeno z min-max algoritmom. Ta v določenem oknu 
+odšteje maksimalno in minimalno amplitudo signala. Algoritem je hiter, vendar ima slabo lastnost, da efektivno pod-vzorči signal, namreč minimalna in maksimalna vrednost sinusoidnega signala se v eni
+periodi ne spreminja in je tako izločena amplituda enaka po celotni periodi VF signala. Ko se z oknom začnemo premikati čez novo periodo odziva, imamo novo maksimalno vrednost.
+Drug način pa je s pomočjo Fourierove transformacije, prednost te je, da imamo novo amplitudo v vsakem diskretnem času. V digitalnih sistemih se velikokrat
+uporablja diskretna Fourierova transformacija (DFT), ki pa je za ta primer prepotratna, saj potrebujemo amplitudo signala pri le eni frekvenci - zato uporabimo fourierovo vrsto. Do amplitude pridemo z 
+množenjem okna s sinusno in kosinusno funkcijo \cite{enwiki:fourierSeries}. To že uporabljamo za visokofrekvenčno vzbujanje, kar poenostavi implementacijo in pohitri izračun.
 
 Kot induktivnost stroja, so tudi tokovni odzivi poenostavitev realnega sistema. Lahko pričakujemo najnižjo vrednost amplitude tokovnega odziva v vzdolžni smeri in najvišjo v prečni, vendar bo oblika
 in s tem tudi odklon, kjer sta odziva enake amplitude malo zamaknjena od pričakovane. To je prikazano na slikah \ref{tokovniOdzivKot0} in \ref{tokovniOdzivKot45}, kjer je odklon rotorja kot med
@@ -350,167 +353,148 @@ rotorjem - gnanim ročno - in FKS (HKS je za pi/4 zamaknjen od FKS).
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivKot0.eps}
-    \caption{\label{tokovniOdzivKot0} Primer vključitve slike.}
+    \includegraphics[width=0.95\columnwidth]{Slike/tokovniOdzivKot0.eps}
+    \caption{\label{tokovniOdzivKot0} $\hat{i}_{dh}$ in $\hat{i}_{qh}$ pri odklonu 0°.}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivKot45.eps}
-    \caption{\label{tokovniOdzivKot45} Primer vključitve slike.}
+    \includegraphics[width=0.95\columnwidth]{Slike/tokovniOdzivKot45.eps}
+    \caption{\label{tokovniOdzivKot45} $\hat{i}_{dh}$ in $\hat{i}_{qh}$ pri odklonu 45°.}
 \end{figure}
 
 Na sliki \ref{tokovniOdzivKot0} je bil koordinatni sistem HKS poravnan s SKS - torej je bila vzdolžna os HKS poravnana z osjo $\alpha$ SKS, na sliki \ref{tokovniOdzivKot45} pa je bil HKS za 45 stopinj
-odmaknjen od SKS. Opazimo, da je že tukaj nekaj odstopanja. V delovanju HFSI metode, kjer se HKS vrti napram SKS, bomo dobili različne odzive, odvisno od trenutnega odklona HKS, tudi če bo HFSI
-pravilno estimiral odklon.
+odmaknjen od SKS. Pri obeh slikah je na abcisni osi prikazan odklon RKS od FKS. Opazimo, da je že tukaj nekaj odstopanja od pričakovanega idealnega odziva. Pričakovali bi enak odziv pri tej meritvi,
+ne glede na odklon HKS od SKS. V delovanju HFSI metode, kjer se HKS vrti relativno na SKS, bomo tako dobili popačenja v odzivu z odklonom HKS.
 \\
-Dodatno nam odziv kvarita vzdolžna in prečna tokova, ki ju uporabljamo za tvorjenje navora, pri metodah MTPA in slabljenje polja pa poleg prečne tudi tok vzdolžne komponente ni ničelen. Ta dva tokova
-dodatno magnetita jedro rotorja, kar spremeni magnetne razmere v stroju, kot je prikazano na slikah \ref{tokovniOdzivId} - \ref{tokovniOdzivIq_IqAmp}:
+Dodatno nam odziv kvarita prečni in vzdolžni tok - prvega uporabljamo za tvorjenje navora, pri metodah MTPA in slabljenje polja pa tudi drugega. Ta dva tokova
+dodatno magnetita jedro rotorja, kar spremeni magnetne razmere v stroju, kot je prikazano na slikah \ref{tokovniOdzivId} - \ref{tokovniOdzivIq_IqAmp}, kjer uporabljamo dodatno enosmerno prečno in
+vzdolžno komponetno v RKS, katerega odklon je znan z dajalnikom pozicije:
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivId.eps}
-    \caption{\label{tokovniOdzivId} Primer vključitve slike.}
+    \includegraphics[width=0.95\columnwidth]{Slike/tokovniOdzivId.eps}
+    \caption{\label{tokovniOdzivId} Vpliv enosmerne vzdolžne tokovne komponentne na $\hat{i}_{dh}$ in $\hat{i}_{qh}$.}
 \end{figure}
 
-Vidimo, da vzdolžni tok močno zmanjša induktivnost v d smeri, v q smeri pa je odziv relativno nespremenljiv po različnih vzdolžnih tokovnih.
-Vzbujanje s prečnim tokom pa je prikazano na dveh slikah, na sliki \ref{tokovniOdzivIq_IdAmp} je prikazan odziv v vzdolžni smeri HKS, na sliki \ref{tokovniOdzivIq_IqAmp} pa prečni. 
+Vidimo, da vzdolžni tok močno poveča odzov pri višjih pozitivnih tokovih, pri negativnih pa odziv ostane relativno nespremenjen. To se pojavi verjetno zato, ker s pizitivnim tokom jedro dodatno
+magnetimo, z negativnim pa negiramo magnetno polje permanentnih magnetov.
+\\
+Vzbujanje s prečnim tokom pa je prikazano na dveh slikah, na sliki \ref{tokovniOdzivIq_IdAmp} je prikazan odziv v vzdolžni smeri HKS, na sliki \ref{tokovniOdzivIq_IqAmp} pa prečni. Prav tako je
+prikazan odziv samo pri pozitivnem prečnem (enosmernem) vzbujanju, ker je pri negativnem ta simetričen odzivu pri pozitivnem. Opazimo, da pri višjih tokovih odziv močno popačen in daleč od idealnega.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivIq_IdAmp.eps}
-    \caption{\label{tokovniOdzivIq_IdAmp} Primer vključitve slike.}
+    \includegraphics[width=0.95\columnwidth]{Slike/tokovniOdzivIq_IdAmp.eps}
+    \caption{\label{tokovniOdzivIq_IdAmp} Vpliv enosmerne prečne tokovne komponentne na $\hat{i}_{dh}$.}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivIq_IqAmp.eps}
-    \caption{\label{tokovniOdzivIq_IqAmp} Primer vključitve slike.}
+    \includegraphics[width=0.95\columnwidth]{Slike/tokovniOdzivIq_IqAmp.eps}
+    \caption{\label{tokovniOdzivIq_IqAmp} Vpliv enosmerne prečne tokovne komponentne na $\hat{i}_{qh}$.}
 \end{figure}
  
-Moramo pa se zavedati tudi dejstva, da pri brezsenzorskem vodenju ne poznamo prave pozicije rotora in imamo na voljo samo približno vrednost. Tudi v poenostavljenem vodenju kjer uporabljamo samo
-prečni tok za tvorjenje navora, bomo v primeru napake estimirane pozicicje rotorja v RKS imeli nek neničelni vzdolžni tok. Slike \ref{tokovniOdzivId} - \ref{tokovniOdzivIq_IqAmp}, kjer je bila
-pozicija rotorja znana z dajalnikom pozicije, prikazujejo samo odziv sistema v primeru ali vzdolžnega ali prečnega toka. V realnem sistemu pa se bo pozicija estimirala in bo imela neko napako. Zato si
-poglejmo amplitude tokovnih odzivov v primeru, kjer ne poznamo pozicije rotorja. HKS je kot prej od FKS odmaknjen za $\frac{\pi}{4}$ in poravnan s SKS, vrednost prečnega toka je parametrizirana, vzdolžni tok se vodi na
-ničelno vrednost, z vrtenjem rotorja pa umetno ustvarjamo napako estimirane pozicije.
+\newpage 
+Moramo pa se zavedati tudi dejstva, da pri brezsenzorskem vodenju ne poznamo prave pozicije rotora in imamo na voljo samo približno vrednost. Slike \ref{tokovniOdzivId} - \ref{tokovniOdzivIq_IqAmp},
+kjer je bila pozicija rotorja znana z dajalnikom pozicije, prikazujejo samo odziv amplitude VF tokovnega odziva v primeru vzdolžnega ali prečnega toka RKS. V realnem sistemu pa se bo pozicija
+estimirala in bo imela neko napako. Tudi v poenostavljenem vodenju kjer uporabljamo samo prečni tok za tvorjenje navora, bomo v primeru napake estimirane pozicicje rotorja v RKS imeli nek neničelni
+vzdolžni tok, saj prečni tok, ki ga vodimo s FOC vodenjem, vodimo v FKS in ne v RKS, s prisotno napako ocenjenega toka pa ta dva nista poravnana. Zato si poglejmo amplitude tokovnih odzivov v primeru,
+kjer ne poznamo pozicije rotorja. HKS je kot prej od FKS odmaknjen za $\frac{\pi}{4}$ in poravnan s SKS, vrednost prečnega toka je parametrizirana, vzdolžni tok se vodi na ničelno vrednost, z vrtenjem
+rotorja pa umetno ustvarjamo napako estimirane pozicije.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivIs_IdAmp.eps}
-    \caption{\label{tokovniOdzivIs_IdAmp} Primer vključitve slike.}
+    \includegraphics[width=0.95\columnwidth]{Slike/tokovniOdzivIs_IdAmp.eps}
+    \caption{\label{tokovniOdzivIs_IdAmp} Vpliv enosmerne prečne tokovne komponentne na $\hat{i}_{dh}$ pri različnih odklonih rotorja od FKS.}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivIs_IqAmp.eps}
-    \caption{\label{tokovniOdzivIs_IqAmp} Primer vključitve slike.}
+    \includegraphics[width=0.95\columnwidth]{Slike/tokovniOdzivIs_IqAmp.eps}
+    \caption{\label{tokovniOdzivIs_IqAmp} Vpliv enosmerne prečne tokovne komponentne na $\hat{i}_{qh}$ pri različnih odklonih rotorja od FKS.}
 \end{figure}
 
-Na slikah \ref{tokovniOdzivIs_IdAmp} in \ref{tokovniOdzivIs_IqAmp} je TODO Komentiraj.
+Na sliki \ref{tokovniOdzivIs_IdAmp} je prikazana amplituda VF tokovnega odziva v vzdolžni smeri, na sliki \ref{tokovniOdzivIs_IqAmp} pa v prečni. Opazimo, da so odzivi pri negativnem toku le fazno
+zamaknjeni za 180 stopinj. To je pričakovano, saj je negativni tok le za 180 električnih stopinj obrnjen vektor pozitivnega prečnega toka. Opazimo tudi, da je v eni polovici grafa amplituda dokaj
+nespremenljiva, na drugem koncu pa močno odvisna od odklona rotorja. Enosmerna komponenta prečnega toka je regulirana v FKS, kateri pa se ne obrača relativno na SKS, kar pomeni, da z obračanjem
+rotorja v nekaterih pozicijah tvorimo navor, v drugih pa rotor magnetimo s tem tokom. V primeru, kjer je napaka ocene majhna, je magnetenje rotorja tudi majhno saj je le prečni tok neničeln.
 
-Dodatna meritev, ki pokaže ne-idealnost sistema je primer, kjer HKS odmaknemo od RKS za $\frac{\pi}{4}$ - torej morata biti amplitudi tokovnega odziva v HKS enaki. Prečni tok parametriziramo in
-opazujemo njegov vpliv na amplitudi. Odklon RKS od SKS je znan in merjen z dajalnikom pozicije, nato pa rotor počasi vrtimo.  V idealnem primeru bi morali dobiti konstanten odziv enakih amplitud v
-obeh smereh, vendar zaradi raznih vplivov dobimo na odzivu motnje, ki kvarijo estimacijo pozicije. To je prikazano na slikah \ref{tokovniOdzivIs_HKSslediRKS_IdAmp} -
-\ref{tokovniOdzivIs_HKSslediRKS_diff}, kjer je prikazana amplituda v vzdolžni smeri (\ref{tokovniOdzivIs_HKSslediRKS_IdAmp}), prečni smeri (\ref{tokovniOdzivIs_HKSslediRKS_IqAmp}) in razlika, ki jo
-reguliramo (\ref{tokovniOdzivIs_HKSslediRKS_diff}). 
+Dodatna meritev, ki pokaže ne-idealnost sistema je primer, kjer HKS odmaknemo od RKS za $\frac{\pi}{4}$ - torej morata biti amplitudi tokovnega odziva v HKS enaki (lahko rečemo tudi da FKS poravnamo z
+RKS, katerega pozicija je znana z dajalnikom in obratujemo brez napake ocene pozicije rotorja). Prečni tok parametriziramo in opazujemo njegov vpliv na amplitudi. Odklon RKS od SKS je znan in merjen z
+dajalnikom pozicije, nato pa rotor počasi vrtimo.  V idealnem primeru bi morali dobiti konstanten odziv enakih amplitud v obeh smereh, vendar zaradi raznih vplivov dobimo na odzivu motnje, ki kvarijo
+estimacijo pozicije. To je prikazano na slikah \ref{tokovniOdzivIs_HKSslediRKS_IdAmp} - \ref{tokovniOdzivIs_HKSslediRKS_IqAmp}, kjer je prikazana amplituda v vzdolžni smeri
+(\ref{tokovniOdzivIs_HKSslediRKS_IdAmp}) in prečni smeri (\ref{tokovniOdzivIs_HKSslediRKS_IqAmp}).
+\newpage
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivIs_HKSslediRKS_IdAmp.eps}
-    \caption{\label{tokovniOdzivIs_HKSslediRKS_IdAmp} Primer vključitve slike.}
+    \includegraphics[width=0.95\columnwidth]{Slike/tokovniOdzivIs_HKSslediRKS_IdAmp.eps}
+    \caption{\label{tokovniOdzivIs_HKSslediRKS_IdAmp} Neidealnost $\hat{i}_{dh}$ pri različnih prečnih tokovih, kjer HKS sledi RKS.}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivIs_HKSslediRKS_IqAmp.eps}
-    \caption{\label{tokovniOdzivIs_HKSslediRKS_IqAmp} Primer vključitve slike.}
+    \includegraphics[width=0.95\columnwidth]{Slike/tokovniOdzivIs_HKSslediRKS_IqAmp.eps}
+    \caption{\label{tokovniOdzivIs_HKSslediRKS_IqAmp} Neidealnost $\hat{i}_{qh}$ pri različnih prečnih tokovih, kjer HKS sledi RKS.}
 \end{figure}
 
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivIs_HKSslediRKS_diff.eps}
-    \caption{\label{tokovniOdzivIs_HKSslediRKS_diff} Primer vključitve slike.}
-\end{figure}
-
-Najprej se opazi, da se povprečna amplituda z višanjem prečnega toka povečuje, bolj pomembno pa je izrazito povečanje višje-harmonske komponente, ki nam kvari odziv. Na sliki
-\ref{tokovniOdzivIs_HKSslediRKS_IqAmp} se to hitreje opazi, saj je prikazana razlika in višja povprečna amplituda obeh signalov ni pomembna, višje-harmonska komponenta pa pride do izraza v regulirani
-veličini, kar nam kvari estimacijo pozicije. To je prikazano v zadnjem poglavju. 
-
-Tukaj bi dodali, da je nominalen fazni tok motorja 18A. TODO vprašanje za profesorja?
-
-%-> Odziv odvisen od odklona hfsi, verjetno zaradi magnetne asimetrije
-%
-%-> Odziv v odvnosti od Id
-% 
-%-> odizv v odvisnosti od Iq, oblika ni tok pomembna kt to da se ti regulirana veličina spreminja z Iq/Id. Predstavitev regulirane veličine v naslednjem poglavju 
-%
-%Odziva $\hat{I}_{dh}$ in $\hat{I}_{qh}$ sta enaka, ko je kot $\Delta\theta$ enak faktorju $\frac{pi}{2}$, kar je pomembno 
-
+Najprej se opazi, da se povprečna amplituda z višanjem prečnega toka povečuje, bolj pomembno pa je izrazito povečanje višje-harmonske komponente, ki se pojavi v vzdolžnem odzivu. Ta pride do izraza v
+naslednjem poglavju, kjer uvedemo novo spremenljivko - razliko amplitud tokovnih odzivov.
 
 \section{Izračun pozicije rotorja}
 
-Amplitudi tokovnega odziva v d smeri in q smeri HKS sedaj odštejemo in to razliko uporabimo kot regulirano veličino:
+Amplitudi VF tokovnega odziva na prečni in vzdolžni osi HKS sedaj odštejemo in to razliko uporabimo kot regulirano veličino:
 
 \begin{center}
-    $\hat{I}_{e} = \hat{I}_{qh} - \hat{I}_{dh}$
+    $\hat{i}_{e} = \hat{i}_{dh} - \hat{i}_{qh}$
 \end{center}
-
-V primeru, kjer sta vzdolžni in prečni tok enaka nič in vzbujamo stator le z visoko frekvenco v HKS, je $\hat{I}_{e}$ dokaj sinusoidne oblike, kot je vidno na sliki \ref{reguliranaVelicinaIdq0}.
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\columnwidth]{Slike/reguliranaVelicinaIdq0.eps}
-    \caption{\label{reguliranaVelicinaIdq0} Primer vključitve slike.}
+    \caption{\label{reguliranaVelicinaIdq0} $\hat{i}_{e}$ pri odklonu 0° in 45°.}
 \end{figure}
 
-Iz slike \ref{reguliranaVelicinaIdq0} je razvidno, da že samo odklon HKS od SKS vpliva na lokacijo ničelne napake. V prejšnjem poglavju je so bili prikazani odzivi v odvisnosti od prečnega in
-vzdolžnega toka. $\hat{I}_{e}$ v teh pogojih je naslednja:
+Na sliki \ref{reguliranaVelicinaIdq0} je prikazan tok $\hat{i}_{e}$,  kjer vzbujamo stator le z visoko frekvenco v HKS. Odklon HKS se ne spreminja in je poravnan z SKS, vrtimo pa rotor stroja. Opazimo
+da se okoli delovne točka, ko je napaka ocenjenega kota majhna, $\hat{i}_{e}$ spreminja linearno. Željena vrednost tega signala je nič, saj bosta takrat amplitudi VF tokovnega odziva prečne in
+vzdolžne komponente enaki, FKS pa bo poravnan z RKS. Od željene vrednosti regulirane veličina, torej nič, odštejemo dejansko vrednost $\hat{i}_{e}$ in to vstavimo v PI regulator. Izhod regulatorja je
+regulirna veličina, to je veličina s katero vplivamo na regulirano. V tem primeru je to vrtilna hitrost $\omega_h$, ki jo integriramo da dobimo pozicijo HKS, katero pa v povratni zanki uporabimo za
+nov izračun $\hat{i}_{e}$. 
 
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=1\columnwidth]{Slike/reguliranaVelicinaId.eps}
-    \caption{\label{reguliranaVelicinaId} Primer vključitve slike.}
-\end{figure}
-
-
-Vzdolžni tok nam močno poveča amplitudo regulirane veličine $\hat{I}_{e}$, s tem pa se okoli delovne točke naklon regulirane veličine tudi močno poveča. To nam spremeni ojačanje povratne zanke in s
-tem dinamiko sistema.
-
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=01\columnwidth]{Slike/reguliranaVelicinaIq.eps}
-    \caption{\label{reguliranaVelicinaIq} Primer vključitve slike.}
-\end{figure}
-
-Prečni tok pa nam amplitudo regulirane veličine zmanjša, opazi pa se tudi, da v dveh točkah ($\frac{\pi}{2}$ in $-\frac{\pi}{2}$) regulirana veličin ni več linearna. Pri višjih tokovih se celo izravna.
-V teh točkah algoritem ni več stabilen, zato se mora izbrati prava delovna točka.
-Opazimo pa, da kljub uporabi visokega prečnega toka pri ničtem odklonu ali odklonu za kot $\pi$ regulirana veličina ohranja naklon in delovna točka, kjer $\hat{I}_{e} = 0$ se ne spreminja.
-\\
-Da dobimo realnen pogled na delovanje algoritma v brezsenzorskem načinu, pa moramo pogledati, kakšen bo odziv toka $\hat{I}_{e}$ v odvisnosti od napake estimirane pozicije rotorja. Če na sliki
-\ref{tokovniOdzivIs} odštejemo amplitudi odziva v prečni in vzdolžni komponenti dobimo vrednost toka $\hat{I}_{e}$ v odvisnosti od napake estimacije pozicije rotorja. To je prikazano na sliki
-\ref{reguliranaVelicinaIs}:
-
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=1\columnwidth]{Slike/reguliranaVelicinaIs.eps}
-    \caption{\label{reguliranaVelicinaIs} Primer vključitve slike.}
-\end{figure}
-
-Če poskrbimo, da bo imel tok $\hat{I}_{e}$ vedno ničelno vrednost, bo tako tudi HKS odklonjen od rotorskega koordinatnega sistema za $\frac{\pi}{4}$. Opazimo da se okoli delovne točka, ko je napaka
-ocenjenega kota majhna, se $\hat{I}_{e}$ spremninja linearno. Od željene vrednosti regulirane veličina, torej nič, odštejemo dejansko vrednost $\hat{I}_{e}$ in to vstavimo v PI regulator. Izhod
-regulatorja je regulirna veličina, to je veličina preko katere vplivamo na regulirano. V tem primeru je to vrtilna hitrost $\omega_o$, ki jo integriramo da dobimo pozicijo HKS, katero pa v povratni zanki
-uporabimo za nov izračun $\hat{I}_{e}$. 
-
-Tako z regulacijo $\hat{I}_{e}$ na nič dosežemo, da sta amplitudi tokovnega odziva v vzdolžni in prečni komponenti HKS enaki. Iz tega sledi, da je HKS od RKS odklonjen za $\frac{\pi}{4}$. Do pozicije
-rotorja pridemo s preprostim izračunom:
+Tako z regulacijo $\hat{i}_{e}$ na nič dosežemo, da sta amplitudi tokovnega odziva v vzdolžni in prečni komponenti HKS enaki. Kot smo že omenili, je to takrtat, ko je HKS od RKS odmaknjen za
+$\frac{\pi}{4}$. Do pozicije rotorja pridemo s preprostim izračunom:
 
 \begin{equation}
     \theta_{r} = \theta_{h} - \frac{\pi}{4}
 \end{equation}
 
+Na sliki \ref{reguliranaVelicinaIdq0} se opazi, da že samo odklon HKS od SKS vpliva na lokacijo ničelne napake, torej bo prisotna neka napaka na oceni pozicije rotorja, na določenih odklonih HKS od
+SKS. To bo dodatno prikazano v zadnjem poglavju.
+
+Za tvorjenje navora pa potrebujemo dodatno enosmerno tokovno komponentno na prečni osi HKS. V prejšnjem podpoglavju smo pokazali, da ta vpliva na amplitudi VF tokovnega odziva. Odvisnost razlike teh
+dveh, torej $\hat{i}_{e}$, od napake ocenjene pozicije je prikazana na sliki \ref{reguliranaVelicinaIs}. Slika prikazuje razliko amplitud VF tokovnih odzivov prečne in vzdolžne komponente, prikazanih
+v prejšnjem podpoglavju (sliki \ref{tokovniOdzivIs_IdAmp} in \ref{tokovniOdzivIs_IqAmp}), pri različnih prečnih tokovih. 
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1\columnwidth]{Slike/reguliranaVelicinaIs.eps}
+    \caption{\label{reguliranaVelicinaIs} Vpliv enosmerne prečne tokovne komponentne na $\hat{i}_{e}$ pri različnih odklonih rotorja od FKS.}
+\end{figure}
+
+Z meritvijo amplitud VF odziva v odvisnosti od napake pridobimo informacijo o okolici delovne točke regulatorja. Lahko pa pogledamo tudi, kako se ta točka spreminja v odvisnosti od odklona HKS od SKS,
+saj smo s sliko \ref{reguliranaVelicinaIdq0} pokazali, da vrednost razlike amplitud ni vedno nič pri istem odklonu HKS od RKS. Slika \ref{tokovniOdzivIs_HKSslediRKS_diff} prikazuje razliko amplitud VF
+tokovnega odziva v prečni in vzdolžni komponenti HKS, kjer je HKS od RKS odmaknjen za $\frac{\pi}{4}$, pozicija RKS je znana z dajalnikom pozicije, rotor pa vrtimo. Pričakovali bi, da je razlika
+amplitud enaka 0, vendar se opazi, da je prisotna višje-harmonska komponenta, ki je višja z višjim prečnim tokom. V zadnjem poglavju je prikazana napaka ocenjene pozicije v tem primeru.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1\columnwidth]{Slike/tokovniOdzivIs_HKSslediRKS_diff.eps}
+    \caption{\label{tokovniOdzivIs_HKSslediRKS_diff} Neidealnost $\hat{i}_{e}$ pri različnih prečnih tokovih, kjer HKS sledi RKS.}
+\end{figure}
+
 \section{Vpliv mrtvega časa pretvornika}
-Kaj je mrtvi čas, zakaj je potreben in kako vpliva na sistem. Realna napetost na statorju zaradi mrtvega časa, kako to vpliva na sistem etc. 
-\\
+
 V praktičnem sistemu, kjer se uporablja močnostni pretvornik imamo opravka s preklopi visokih in nizkih tranzistorjev. Ko je odprt nizek fet, je fazna napetost 0V, ko je odprt visok fet pa je fazna
 napetost enaka napajalni. Med preklopom iz 0V in 24V pa je za kratek čas potrebno izklopiti oba, saj v primeru, kjer prevajata oba nastane nizko-impedančna pot, ki povzroči kratek stik. Čas, ko sta
 izklopljena oba se imenuje mrtvi čas, napetost faze v tem času pa je odvisna od smeri toka te faze. Slika \ref{mrtviCasRazlaga} prikazuje odvisnost napetosti faze, ko sta oba tranzistorja močnostnega
@@ -519,34 +503,33 @@ pretvornika te faze zaprta. Ker sta oba zaprta, mora tok steči skozi diodo zgor
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.5\columnwidth]{Slike/Inkscape/mrtviCasRazlaga.eps}
+    \includegraphics[width=0.4\columnwidth]{Slike/Inkscape/mrtviCasRazlaga.eps}
     \caption{\label{mrtviCasRazlaga} Napetost faze ko sta oba tranzistorja zaprta}
 \end{figure}
 
 Za delovanje HFSI algoritma pa poleg osnovne harmonske komponente za tvorjenje navora vzbujamo stator še z visoko frekvenčno komponento. V primeru, kjer stator vzbujamo samo z visoko frekvenco, bi
-mrtvi čas vedno vplival na odziv in njegov vpliv bi bil konstanten. Ko pa vzbujamo še s konstantnim prečnim ali vzdolžnim tokom, pa vidimo vpliv mrtvega časa samo, ko osnovna harmonska tokovna komponenta
-zamenja polariteto. To lahko potrdimo z meritvami na realnem sistemu, kjer HKS odmaknemo od RKS za $\frac{\pi}{4}$ in v FKS vzbujamo stator s konstantnim tokom, rotor pa počasi vrtimo. Pričakovali bi
-konstantno in enako amplitudo VF tokovnega odziva v prečni in vzdolžni komponenti HKS, vendar na sliki \ref{mrtviCas} opazimo, da je na šestih pozicijah odziv popačen in da je magnituda napake dokaj linearno odvisna
-od mrtvega časa. Modra barva označuje amplitudo VF odziva prečne komponente, rdeča pa vzdolžne. Temnejši kot so odzivi, večji je mrtvi čas. 
+mrtvi čas vedno vplival na odziv in njegov vpliv bi bil konstanten. Ko pa vzbujamo še s konstantnim prečnim ali vzdolžnim tokom, pa vidimo vpliv mrtvega časa samo, ko osnovna harmonska tokovna
+komponenta zamenja polariteto. To lahko potrdimo z meritvami na realnem sistemu, kjer HKS odmaknemo od RKS za $\frac{\pi}{4}$ in v FKS vzbujamo stator s konstantnim tokom, rotor pa počasi vrtimo.
+Pričakovali bi konstantno in enako amplitudo VF tokovnega odziva v prečni in vzdolžni komponenti HKS, vendar na sliki \ref{mrtviCas} opazimo, da je na šestih pozicijah odziv popačen in da je magnituda
+napake dokaj linearno odvisna od mrtvega časa. Modra barva označuje amplitudo VF odziva prečne komponente, rdeča pa vzdolžne. Temnejši kot so odzivi, večji je mrtvi čas. 
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/mrtviCas.eps}
+    \includegraphics[width=0.95\columnwidth]{Slike/mrtviCas.eps}
     \caption{\label{mrtviCas} Odvisnost popačenja amplitude odziva od dolžine mrtvega časa}
 \end{figure}
 
 Prav tako lahko potrdimo, da je mrtvi čas odvisen od napajalne napetosti, prikazano na sliki \ref{mrtviCasNapetost}. Odziv je bil pomerjen pri napetostih 16V, 24V in 32V, kjer je temnejša barva večja
 napetost.
 
-
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\columnwidth]{Slike/mrtviCasNapetost.eps}
+    \includegraphics[width=0.95\columnwidth]{Slike/mrtviCasNapetost.eps}
     \caption{\label{mrtviCasNapetost} Odvisnost popačenja amplitude odziva od napajalne napetosti }
 \end{figure}
 
 Dodatno lahko pokažemo, da se vpliv mrtvega časa začne kazati takrat, ko začne VF tokovni odziv menjati polariteto. Na zgornjem grafu sta prikazani amplitudi tokovnega odziva prečne in vzdolžne
-komponente in fazni tok $I_u$, na drugem grafu pa filtriran $I_u$ s pasovnim filtrom. Na prvem grafu je z modro barvo označen del, kjer fazni tok prehaja skozi nič, torej takrat, ko mrtvi čas kvari
+komponente in fazni tok $i_u$, na drugem grafu pa filtriran $i_u$ s pasovnim filtrom. Na prvem grafu je z modro barvo označen del, kjer fazni tok prehaja skozi nič, torej takrat, ko mrtvi čas kvari
 tokovni odziv. Opazi se izrazit efekt mrtvega časa na tokovnem odzivu prečne in vzdolžne komponente v modrem delu, prav tako pa se opazi na faznem toku na drugem grafu.
 
 \begin{figure}[!htbp]
@@ -555,9 +538,33 @@ tokovni odziv. Opazi se izrazit efekt mrtvega časa na tokovnem odzivu prečne i
     \caption{\label{mrtviCasFazniTok} Vpliv mrtvega časa na faznem toku }
 \end{figure}
 
+Iz slike \ref{mrtviCasFazniTok} lahko sklepamo, da bo popačenje zaradi mrtvega časa večje tudi z večjo povprečno amplitudo VF tokovnega odziva (oziroma bo vidno v širšem kotu) in večje, če bo enosmerna
+komponenta toka v FKS manjša, saj bo v večih kotnih pozicijah VF tokovna komponenta prehajala čez ničti tok, oziroma menjala polariteto. To lahko pokažemo z meritvami, prikazanimi na slikah
+\ref{tokovniOdzivIs_HKSslediRKS_IdAmp_DT} in \ref{tokovniOdzivIs_HKSslediRKS_IqAmp_DT}, kjer je prikazana amplituda v vzdolžni in prečni smeri, in na sliki
+\ref{tokovniOdzivIs_HKSslediRKS_IdiffAmp_DT}, kjer je prikazana njuna razlika.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/tokovniOdzivIs_HKSslediRKS_IdAmp_DT.eps}
+    \caption{\label{tokovniOdzivIs_HKSslediRKS_IdAmp_DT} Vpliv prečnega toka na popačenje $\hat{i}_{dh}$ zaradi mrtvega časa. }
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/tokovniOdzivIs_HKSslediRKS_IqAmp_DT.eps}
+    \caption{\label{tokovniOdzivIs_HKSslediRKS_IqAmp_DT} Vpliv prečnega toka na popačenje $\hat{i}_{qh}$ zaradi mrtvega časa. }
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/tokovniOdzivIs_HKSslediRKS_IdiffAmp_DT.eps}
+    \caption{\label{tokovniOdzivIs_HKSslediRKS_IdiffAmp_DT} Vpliv prečnega toka na popačenje $\hat{i}_{e}$ zaradi mrtvega časa. }
+\end{figure}
+
 
 Takšno popačenje amplitude odziva naravno vpliva na oceno pozicije, saj bo PI regulator poiskušal zmanjšati napako in to tako, da bo spremenil odklon HKS na mesto, kjer imata odziva enako vrednost.
-Vpliv mrtvega časa na oceno pozicije pa je prikazan v zadnjem poglavju.
+Sklepamo lahko tudi, da bo z višjimi tokovi napaka ocenejene pozicije manjša, saj se bo PI regulator zreguliral z manjšim odklonom, saj so motnje po kotu ožje. Vpliv mrtvega časa na oceno pozicije pa
+je prikazan v zadnjem poglavju.
 
 \chapter{Integracija v FOC} \label{integracija}
 
@@ -569,30 +576,24 @@ zanke, zadnji element pa je preklop v delovanje opazovalnika, ko vrtilna hitrost
 Ker s HFSI algoritmom nismo zmožni ocenjevati polaritete rotorja, potrebujemo za pravilno smer vrtenja poskrbeti, da je začetna pozicija znana. Pred zagonom HFSI zaznamo začetno pozicijo rotorja, ki
 se začne uporabljati že od samega začetka delovanja HFSI. Ker je HKS od RKS odklonjen za $\frac{\pi}{4}$, je začetna vrednost kota HKS enaka ocenjeni začetni vrednosti RKS z odklonom $\frac{\pi}{4}$.
 \\
-Pri delovanju HFSI tokovna povratna zanka vključuje tudi VF komponento, ki jo je potrebno izfiltrirati. Uporabimo zaporni pasovni filter (BSF). Filtriranja ne smemo izvesti v SKS, saj je tam VF
-komponenta različne frekvence, ki je odvisna tudi od vrtilne hitrosti HKS. Zato filtriramo v RKS, kjer ima konstantno frekvenco in sicer tako, s katero vzbujamo stator v HKS. Ker filtriramo v RKS, pa
-lahko filtrirane tokove $I_d$ in $I_q$ direktno uporabimo za tokovno regulacijo. 
-\\
-Ob zagonu prvih nekaj period vzbujalnega signala FOC regulatorje izklopimo, da se prehodni pojav pasovnih filtrov ustali. 
+Pri delovanju HFSI tokovna povratna zanka vključuje tudi VF komponento, ki jo je potrebno izfiltrirati, saj lahko tokovna regulatorja s povratno zanko vplivata na VF odziv ali pa celo destabilizirata
+sistem. Uporabimo zaporni pasovni filter (BSF). Filtriranja ne smemo izvesti v SKS, saj je tam VF komponenta različne frekvence, ki je odvisna tudi od vrtilne hitrosti HKS. Zato filtriramo v FKS, kjer
+ima konstantno frekvenco in sicer enako vzbujalnem signalu. Ker filtriramo v FKS, pa lahko filtrirane tokove $i_d$ in $i_q$ direktno uporabimo za tokovno regulacijo. Ob zagonu prvih nekaj period
+vzbujalnega signala FOC regulatorje izklopimo, da se prehodni pojav pasovnih filtrov ustali. 
 
-\section{Začetni kot in izbira minimuma}
+% profesor: Bi bilo tukaj smiselno dodati še sliko filtriranja povratne tokovne zanke?
+
+\section{Začetni kot in izbira stabilne delovne točke}
 
 Ob inicializaciji HFSI algoritma, moramo določiti začetno pozicijo in tako primerno tudi postaviti HKS v stabilno točko regulacije - do sedaj smo vedno definirali to točko kot odklon od RKS za
-$\frac{\pi}{4}$. Smo pa že matematičnem zapisu tokovnih odzivov in tudi realnih odzivov opazili, da so štiri stabilne regulacijske točke - torej tisti odkloni HKS od RKS, kjer ima razlika amplitudnih
+$\frac{\pi}{4}$. Smo pa že pri matematičnem zapisu tokovnih odzivov in tudi realnih odzivov opazili, da so štiri stabilne regulacijske točke - torej tisti odkloni HKS od RKS, kjer ima razlika amplitudnih
 odzivov ali regulirana veličina vrednost nič. Tako bi pričakovali, da je lahko tudi odklon HKS od RKS poljuben, oziroma bolj točno $\frac{\pi}{4} + k\frac{\pi}{2}$, kjer je k poljubno naravno število.
 Nato pa smo pokazali z meritvijo, prikazano na sliki \ref{reguliranaVelicinaIs}, da se regulirana veličina okoli stabilnih točk pri višjih prečnih tokovih obnaša drugače. V dveh točkah je linearna, v
 drugih dveh pa ima v eni smeri drugačen naklon kot v drugi. Torej bi pričakovali, da bi dobili tudi drugačno obnašanje algoritma v različnih točkah, vendar pa se je izkazalo, da algoritem ni tako
 občutljiv in niti ni važno v katero začetno stabilno točko ga postavimo (četudi ga v končni implementaciji vedno postavimo v stabilno točko, ki ima najbolj linearno okolico). Tukaj moramo paziti, da
 ne ustvarimo pozitivne povratne zanke s postavitvijo v napačno začetno stabilno točko. HKS lahko postavimo v katerokoli od štirih obstoječih, vendar ima regulirana veličina okoli dveh pozitiven
-naklon, okoli drugih dveh pa negativen. Če ne spremenimo predznaka regulirane veličine v dveh stabilnih točkah, kjer ima ta negativen naklon bo nastala pozitivna povratna zanka, ki destabilizira sistem.
-
-Na sliki \ref{zacetnaStabilnaTocka} so prikazani odzivi v različnih točkah.
-
-%\begin{figure}[!htbp]
-%    \centering
-%    \includegraphics[width=1\columnwidth]{Slike/zacetnaStabilnaTocka.eps}
-%    \caption{\label{zacetnaStabilnaTocka} Preklop v delovanje opazovalnika pozicije. }
-%\end{figure}
+naklon, okoli drugih dveh pa negativen. Če ne spremenimo predznaka regulirane veličine v dveh stabilnih točkah, kjer ima ta negativen naklon bo nastala pozitivna povratna zanka, ki destabilizira
+sistem.
 
 \section{Brezudarni preklop v delovanje opazovalnika}
 
@@ -600,7 +601,7 @@ Proti koncu delovanja HFSI algoritma, ko je vrtilna hitrost že dovolj visoka, d
 da opazovalnik začne delovati v pravilni delovni točki. To lahko dosežemo tako, da opazovalnik deluje že pred preklopom, vzporedno s HFSI algoritmom. Ob preklopu tako samo izklopimo vzbujanje
 statorja. Ta način pa terja dodatne kalkulacije, ki so lahko v določenih sistemih, kjer je nadvsem pomembna nizka cena in zato uporaba manj zmogljivih procesorjev, previsoke. Zato se uporabi drug
 način, ki pa ob preklopu postavi opazovalnik v željeno delovno točko. To pomeni, da je potrebno vsa notranja stanja postaviti na pravilno začetno vrednost. To vključuje notranja stanja modela, ki se
-uporablja za estimacijo inducirane napetosti, ocenjeno hitrost in pozicijo. Problem pri tej metodi pa je, da se je težko izogniti manjšim prenihajem, saj bo vedno prisotna napaka estimacije
+uporabljajo za estimacijo inducirane napetosti, ocenjeno hitrost in pozicijo. Problem pri tej metodi pa je, da se je težko izogniti manjšim prenihajem, saj bo vedno prisotna napaka estimacije
 pozicije in hitrosti algoritma HFSI in ima zato opazovalnik ob preklopu že neko majhno napako. Na sliki \ref{brezudarniPreklop} sta na prvem grafu prikazani ocenjeni hitrosti HFSI algoritma in
 opazovalnika. Ob preklopu, ki se zgodi okoli 0.5 sekunde, hitrost opazovalnika predpolnimo z ocenjeno hitrostjo HFSI algoritma. Drugi graf prikazuje ocenjeno pozicijo obeh algoritmov, na zadnjem grafu
 pa je prikazana napaka ocenjenega kota. Po preklopu se opazi minimalen prenihaj.
@@ -613,13 +614,55 @@ pa je prikazana napaka ocenjenega kota. Po preklopu se opazi minimalen prenihaj.
 
 \section{Nastavitev parametrov PI regulatorja}
 
-Parametri regulatorja so bili nastavljeni ročno in sicer z opazovanjem delovanja algoritma pri različnih parametrih. Za kriterijsko funkcijo smo izbrali napako ocenjenega kota in je bila najprej pomerjena
-pri 10 različnih $K_p$ parametrih, kjer je imel parameter $K_i$ neko začetno vrednost, pri kateri je bil algoritem stabilen. Nato se je izbral $K_p$ z najmanjšo napako in ponovno pomeril odziv s tem
-parametrom in različnimi $K_i$ parametri. Tako smo pridobili $K_p$ in $K_i$ s prvo iteracijo, nato pa se izvedla dodatna iteracija, da smo prišli do optimalnih parametrov. 
+Parametri regulatorja so bili nastavljeni ročno in sicer z opazovanjem delovanja algoritma pri različnih parametrih. Za kriterijsko funkcijo smo izbrali napako ocenjenega kota in je bila najprej
+pomerjena pri desetih različnih $K_p$ parametrih, kjer je imel parameter $K_i$ neko začetno vrednost, pri kateri je bil algoritem stabilen. Nato se je izbral $K_p$ z najmanjšo napako in ponovno pomeril
+odziv s tem parametrom in različnimi $K_i$ parametri. Tako smo pridobili $K_p$ in $K_i$ s prvo iteracijo, nato pa se izvedla dodatna iteracija, da smo prišli do optimalnih parametrov. 
 \\
 V prvi iteraciji je bil obseg vrednosti parametrov, pri katerij se je meril odziv tak, da je algoritem pri robnih vrednostih postal nestabilen. Ko se je izvajala druga iteracija pa se je obseg
 parametrov zmanjšal in je bil okoli vrednosti, pridobljene s prvo iteracijo.
 \\
+Na slikah \ref{PItuning_Kp_unstableLow} - \ref{PItuning_Kp_stable} so prikazani vplivi napačne izbire $K_p$ parametra. Premajhen parameter povzroči večinoma integralski odziv in dobimo velike dolge
+prenihaje, prevelik pa popolnoma destabilizira sistem. Zadnja slika prikazuje optimalno izbiro, kjer ocenjena pozicija sledi dejanski brez večje napake.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/PItuning_Kp_unstableLow.eps}
+    \caption{\label{PItuning_Kp_unstableLow} Prikaz vpliva premajhnega $K_p$ parametra. }
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/PItuning_Kp_unstableHigh.eps}
+    \caption{\label{PItuning_Kp_unstableHigh} Prikaz vpliva prevelikega $K_p$ parametra. }
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/PItuning_Kp_stable.eps}
+    \caption{\label{PItuning_Kp_stable} Prikaz vpliva optimalnega $K_p$ parametra. }
+\end{figure}
+
+Slike \ref{PItuning_Ki_unstableLow} - \ref{PItuning_Ki_stable} pa prikazujejo vpliv $K_i$ parametra. Z izbiro premajhnega parametra regulirno veličino nikoli ne zreguliramo na nič, kar povzroči
+konstantno napako. Brez uporabe $K_i$ parametra pa stroj pade iz sinhronizacije. Prebelik $K_i$ ponovno destabilizira sistem, opzimalen z optimalnim parametrom pa dobimo podoben odziv kot na sliki 
+\ref{PItuning_Kp_stable}, saj je bil $K_p$ parameter že optimalno izbran.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/PItuning_Ki_unstableLow.eps}
+    \caption{\label{PItuning_Ki_unstableLow} Prikaz vpliva premajhnega $K_i$ parametra. }
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/PItuning_Ki_unstableHigh.eps}
+    \caption{\label{PItuning_Ki_unstableHigh} Prikaz vpliva prevelikega $K_i$ parametra. }
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/PItuning_Ki_stable.eps}
+    \caption{\label{PItuning_Ki_stable} Prikaz vpliva optimalnega $K_i$ parametra. }
+\end{figure}
+
 
 \chapter{Eksperimenti}  \label{eksperimenti}
 
@@ -632,7 +675,7 @@ osciloskopom, interne spremenljivke, uporabljene v samem algoritmu, pa so bile v
     \caption{\label{experimentiSlika} Fotografija močnostnega pretvornika in stroja}
 \end{figure}
 
-Na fotografiji \ref{experimentiSlika} je prikazan sistem, na katerem je bil razvit HFSI algoritem. Vidno
+Na fotografiji \ref{experimentiSlika} je prikazan sistem, na katerem je bil razvit HFSI algoritem. 
 
 \section{Trifazni PWM in meritev toka}
 
@@ -667,72 +710,130 @@ spremembo dinamike regulacijskega sistema, ki ga HFSI vsebuje.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.75\columnwidth]{Slike/Inkscape/inverter.eps}
+    \includegraphics[width=0.5\columnwidth]{Slike/Inkscape/inverter.eps}
     \caption{\label{inverter} Shema močnostnega pretvornika in meritve toka }
 \end{figure}
 
 Na sliki \ref{inverter} je prikazan močnostni pretvornik, prav tako pa je prikazano merjenje toka. Uporabljena je konfiguracija enega shunta, kar pomeni, da ko bodo vse tri faze na napajalni
 napetosti ali na 0V, skozi shunt ne bo tekel tok. Zato meritev delamo v začetku PWM periode, ko naprej preklopimo prvo fazo, nato pa drugo. Na sliki \ref{meritevTokaIu} je prikazana prva meritev.
-Če definiramo tok, ki teče v stroj kot pozitiven tok, v tem času merimo tok $I_u$, saj teče iz prve faze v stroj, se porazdeli med drugo in tretjo fazo in skozi shunt. 
+Če definiramo tok, ki teče v stroj kot pozitiven tok, v tem času merimo tok $i_u$, saj teče iz prve faze v stroj, se porazdeli med drugo in tretjo fazo in skozi shunt. 
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.75\columnwidth]{Slike/Inkscape/meritevTokaIu.eps}
-    \caption{\label{meritevTokaIu} Shema močnostnega pretvornika in meritve toka }
+    \includegraphics[width=0.5\columnwidth]{Slike/Inkscape/meritevTokaIu.eps}
+    \caption{\label{meritevTokaIu} Meritev toka $i_u$ }
 \end{figure}
 
-Na sliki \ref{meritevTokaIw} pa je prikazana druga meritev, kjer tok steče skozi prvo in drugo fazo v stroj, iz tretje faze stroja pa skozi shunt, zato tukaj merimo negativen tok $I_w$. 
+Na sliki \ref{meritevTokaIw} pa je prikazana druga meritev, kjer tok steče skozi prvo in drugo fazo v stroj, iz tretje faze stroja pa skozi shunt, zato tukaj merimo negativen tok $i_w$. 
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.75\columnwidth]{Slike/Inkscape/meritevTokaIw.eps}
-    \caption{\label{meritevTokaIw} Shema močnostnega pretvornika in meritve toka }
+    \includegraphics[width=0.5\columnwidth]{Slike/Inkscape/meritevTokaIw.eps}
+    \caption{\label{meritevTokaIw} Meritev toka $-i_w$ }
 \end{figure}
 
-Tok druge faze $I_v$ pa izračunamo po enačbi \ref{izracunIv} iz dveh meritev, saj velja $I_u + I_v + I_w = 0$.
-
+Tok druge faze $i_v$ pa izračunamo po enačbi \ref{izracunIv} iz dveh meritev, saj velja $i_u + i_v + i_w = 0$.
 
 \begin{equation} \label{izracunIv}
-I_v = -(I_u + I_w)
+i_v = -(i_u + i_w)
 \end{equation}
 
+Na sliki \ref{fazeInShunt} so prikazane vse tri fazne napetosti in izhod ojačevalnika.
 
-%V sistemu se uporablja asimetričen PWM in je prikazan na sliki TODO. Največja prednost tega je preprosta implementacija krmiljenja napetosti in merjenje toka, slaba lastnost pa je večje valovanje
-%frekvence PWM-ja. Pretvorba željene napetosti FOC vodenja v preklope tranzistorjev napetostnega pretvornika se stori z modulacijo prostorskih vektorjev (SVM). Željena napetost se na strani pretvornika
-%vidi kot časovno zaporedje nekaj prostorskih vektorjev (odvisno od napetosti). Ti so lahko ali ničelni vektor - (0,0,0) ali (1,1,1) - ali pa aktivni vektor. Aktivni vektorji so stanja, kjer ima vsaj
-%ena izmed medfaznih napetosti neničelno vrednost. Povprečna napetost na vsaki izmed faz v eni periodi PWM je tako enaka željeni vrednosti FOC vodenja. 
-%
-%Napetost faze iz ničelnih vektorjev izračunamo kot povprečje napetosti ene periode:
-%
-%
-%
-%
-%\\
-%Na začetku sekvence prostorskih vektorjev se za merjenje toka uporabljata dva aktivna vektorja, nato pa z uporabo dve ničelnih in dveh aktivnih vektorjev sestavimo željeno izhodno napetost. 
-%
-%Asimetričen PWM ima na začetku zaporedja dva aktivna vektorja, ki se uporabljata za merjenje toka, nato sledi ničelni vektor, nato pa ponovno dva aktivna vektorja in nakoncu ničelni vektor. To
-%zaporedje predstavlja ničelno napetost, kar je tudi razvidno iz povprečnih vrednosti faz. Vse ostale kombinacije faznih napetosti pa se sestavijo 
-
-%\section{Merjenje toka} 
-%Ključna lastnost asimetričnega PWM je, da se prva dva vektorja po časovni dolžini ne spreminjata. Tako nam ni potrebno spreminjati točke, kjer se meri tok. 
-%TODO operacijc v driverju?
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/fazeInShunt.eps}
+    \caption{\label{fazeInShunt} Fazne napetosti in ojačan signal shunta. }
+\end{figure}
 
 
 \section{Rezultati} \label{rezultati}
 
-Vpliv izbire napačnega začetnega minimuma
+V času razvoja algoritma je bilo opaženo, da se ta različno obnaša, ko hitro pospeši do končne hitrosti brez povečanega bremenskega navora in ko je bremenski navor visok, oziroma če ga vrtimo zelo
+počasi. Na sliki \ref{NoLoadRun} je prikazano delovanje algoritma in ocena pozicije brez dodatnega bremenskega navora. Na sliki \ref{HighLoadRun} pa je bila pozicija rotorju vsiljena tako, da smo ga
+vrteli s hitrostjo enega obrata na 10 sekund.
 
-Vpliv mrtvega časa na oceno kota
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{Slike/NoLoadRun.eps}
+    \caption{\label{NoLoadRun} Ocena pozicije rotorja brez dodatnega bremena. }
+\end{figure}
 
-Vpliv Iq na oceno kota
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{Slike/HighLoadRun.eps}
+    \caption{\label{HighLoadRun} Ocena pozicije rotorja pri zelo nizkih hitrostih. }
+\end{figure}
 
-PID tuning
+Na prvi sliki opazimo, da brez dodatne obremenitve stroj hitro pospeši in vztrajnost integratorja poskrbi, da se z oceno pozicije ne ujamemo v razne napake odziva zaradi mrtvega časa ali drugih
+pojavov. Se pa ti opazijo na amplitudi VF tokovnih odzivov kot višjeharmonsko valovanje. Ko pa vrtimo stroj z nizko hitrostjo, regulator bolje zregulira razliko amplitud, vendar pa je zaradi pojavov
+omenjenih v poglavju \ref{teorija} napaka ocene pozicije večja.
 
-Razlika odziva pri nizkem/srednjem navoru in visokem/vsiljena pozicija
+Na koncu tega poglavja smo prav tako pokazali vpliv prečnega toka na tokovni odziv, kjer je bilo opaziti višje harmonsko komponento, ki nam je kvarila odziv in je bila višja z višjim tokom. To se pozna
+tudi na oceni kota, kot je prikazano na slikah \ref{vsiljenaPozicijaTokovi_angle} in \ref{vsiljenaPozicijaTokovi_angleError}. Opazimo, da je napaka pri nižjih tokovnih majhna in relativno
+nespremenljiva, z višjimi tokovih pa postane večja. 
 
-\subsection{Primerjava ...} \label{graf1}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{Slike/vsiljenaPozicijaTokovi_angle.eps}
+    \caption{\label{vsiljenaPozicijaTokovi_angle} Ocena kota pri različnih prečnih tokovih. }
+\end{figure}
 
-Podsekcije za različne meritve, primerjave, odvisnosti veličin, potrjevanje teoretične osnove iz prejšnega poglavja, itd...
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1.0\columnwidth]{Slike/vsiljenaPozicijaTokovi_angleError.eps}
+    \caption{\label{vsiljenaPozicijaTokovi_angleError} Napaka ocene kota pri različnih prečnih tokovih. }
+\end{figure}
+
+Poglejmo še vpliv mrtvega časa - pokazali smo da ima ta vpliv na tokovni odziv, ki je v času efekta mrtvega časa močno popačen. Na slikah \ref{vsiljenaPozicijaMrtviCasPlot_angle} in
+\ref{vsiljenaPozicijaMrtviCasPlot_angleError} je prikazan vpliv mrtvega časa na oceni pozicije. Vidimo, da imamo ostre prehode, na pozicijah $k\frac{pi}{3}$, kar je ravno takrat, ko smo poravnani s
+fazami oziroma, ko s faznimi tokovi preidemo čez nič. Prečni tok pri tem eksperimentu je bil nominalen (18 A). Lahko pa tudi opazimo, da se odziv ne spreminja z mrtvim časom (razen pri vrednosti
+250 μs). Efekt mrtvega časa se na amplitudi tokovnih odzivov kaže kot ozek pulz. Po amplitudi je visok, vendar ker je po poziciji ozek, se regulator zregulira z majhnim oklonom in je zato tudi napaka
+relativno majhna. Amplituda tukaj le diktira, kako močno bo regulator odreagiral na napako.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{Slike/vsiljenaPozicijaMrtviCasPlot_angle.eps}
+    \caption{\label{vsiljenaPozicijaMrtviCasPlot_angle} Ocena kota pri različnih mrtvih časih. }
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1.05\columnwidth]{Slike/vsiljenaPozicijaMrtviCasPlot_angleError.eps}
+    \caption{\label{vsiljenaPozicijaMrtviCasPlot_angleError} Napaka ocene kota pri različnih mrtvih časih. }
+\end{figure}
+
+\newpage
+Poleg vpliva mrtvega časa se še vedno opazi vpliv višjeharmonskega popačenja, katerega vpliv je bil prikazan na prejšnjih dveh slikah. Smo pa tudi pokazali odvisnost efekta mrtvega časa od faznih
+tokov, na slikah \ref{vsiljenaPozicijaMrtviCasPlot_angle} in \ref{vsiljenaPozicijaMrtviCasPlot_angleError} pa se to opazi še na oceni pozicije. Z nižjimi prečnimi tokovi ima večji vpliv mrtvi čas, z
+višjimi pa višjeharmonsko popačenje.
+
+% profesor: kako naj poimenujem ta efekt "višjeharmonskega popačenja", če nevem kaj ta efekt povzroča oz od kje to pride in zakaj? Na sestanku sva rekla da je vejetno magnetna asimetrija stroja,
+% vendar ne morem temu reči tako, če nisem prepričan da je to res efekt tega. Je vredu da sem poimenoval to tako?
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{Slike/vsiljenaPozicijaTokoviZMrtvimCasom_angle.eps}
+    \caption{\label{vsiljenaPozicijaTokoviZMrtvimCasom_angle} Ocena kota pri različnih prečnih tokovih in velikim vrtvim časom. }
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1.05\columnwidth]{Slike/vsiljenaPozicijaTokoviZMrtvimCasom_angleError.eps}
+    \caption{\label{vsiljenaPozicijaTokoviZMrtvimCasom_angleError} Napaka ocene kota pri različnih prečnih tokovih in velikim vrtvim časom. }
+\end{figure}
+
+Pri tem eksperimentu je bil mrtvi čas $1 \mu s$, kar je v resnici relativno velika vrednost. V praksi je mrtvi čas precej nižji, ne moremo pa se mu izogniti, zato je bil prikazan njegov vpliv.
+\\
+V prejšnjem poglavju smo omenili izbiro začetne stabilne točke delovanja algoritma in možen vpliv na delovanje. Narejen je bil eksperiment, kjer smo motor počasi vrteli in opazovali ocenjeno pozicijo.
+To smo storili za vse štiri začetne točke, kjer je bil prečni tok maksimalen, da se poizkusi delovanje v najslabšem primeru. Na sliki \ref{izbiraStabilneTocke} je prikazana ocena pozicije pri vseh
+štirih začetnih točkah, kjer lahko opazimo, da se algoritem obnaša zelo podobno, ne glede na izbiro stabilne pozicije oziroma odklona HKS od RKS:
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{Slike/izbiraStabilneTocke.eps}
+    \caption{\label{izbiraStabilneTocke} Izbira delovne točke obratovanja regulatorja. }
+\end{figure}
 
 %******************************* ZAKLJUČEK *************************************
 \chapter{Zaključek} \label{zakljucek}
@@ -752,7 +853,9 @@ Podsekcije za različne meritve, primerjave, odvisnosti veličin, potrjevanje te
 %    Electromagnetic Radiation Spectrum Poster} [Online]. Dosegljivo: \url{http://www.unihedron.com/projects/spectrum/}. [Dostopano: 23.8.2017]. \end{thebibliography}
 
 %******************************* DODATEK ***************************************
-\appendix
+%\appendix
+
+% profesor: dodam tukaj kakšne parametre? Npr frekvenca in amplituda VF signala, PI reg parametri?
 
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
