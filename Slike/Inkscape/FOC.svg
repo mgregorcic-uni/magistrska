@@ -2664,13 +2664,13 @@
      inkscape:cx="337.97505"
      inkscape:cy="165.03658"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g3-6"
      showgrid="true"
      units="mm"
-     inkscape:window-width="2560"
-     inkscape:window-height="1494"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:window-width="5120"
+     inkscape:window-height="1369"
+     inkscape:window-x="1272"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:snap-midpoints="true"
      inkscape:snap-intersection-paths="true"
@@ -3684,15 +3684,26 @@
          style="font-size:12px;overflow:visible;color-interpolation-filters:sRGB;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.957698;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3;stroke-dasharray:none;stroke-opacity:1" />
       <text
          id="text3834-6-0-71-7-2-4-0-6-5"
-         y="-99.380035"
-         x="235.98653"
+         y="-94.822861"
+         x="302.7641"
          style="font-style:normal;font-weight:normal;font-size:16px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;color-interpolation-filters:sRGB;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333;stroke-linecap:square;stroke-miterlimit:3"
          xml:space="preserve"><tspan
            style="font-size:12.8px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;stroke-width:1.33333"
-           y="-99.380035"
-           x="235.98653"
+           y="-94.822861"
+           x="302.7641"
            sodipodi:role="line"
-           id="tspan8948-9-6">Tokovna regulacija</tspan></text>
+           id="tspan1">Regulacija toka</tspan></text>
+      <text
+         id="text3834-6-0-71-7-2-4-0-6-5-09"
+         y="-94.822861"
+         x="166.70111"
+         style="font-style:normal;font-weight:normal;font-size:16px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;color-interpolation-filters:sRGB;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333;stroke-linecap:square;stroke-miterlimit:3"
+         xml:space="preserve"><tspan
+           style="font-size:12.8px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;stroke-width:1.33333"
+           y="-94.822861"
+           x="166.70111"
+           sodipodi:role="line"
+           id="tspan1-4">Regulacija hitrosti</tspan></text>
       <text
          id="text3834-6-0-71-7-2-4-0-6-5-0"
          y="-104.2693"
@@ -3766,7 +3777,7 @@
          y="158.98642"
          x="148.42017"
          sodipodi:role="line"
-         id="tspan8948-9-6-11">Estimacija pozicije</tspan><tspan
+         id="tspan8948-9-6-11">Ocenjevanje pozicije</tspan><tspan
          style="font-size:12.8px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';text-align:center;text-anchor:middle;stroke-width:1.33333"
          y="174.98642"
          x="148.42017"

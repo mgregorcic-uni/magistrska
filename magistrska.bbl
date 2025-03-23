@@ -1,31 +1,25 @@
 \begin{thebibliography}{1}
 
-\bibitem{ambrovzivc2016elektrivcni}
-V.~Ambro{\v{z}}i{\v{c}}, P.~Zajec, D.~Von{\v{c}}ina  in R.~Fi{\v{s}}er, {\em
-  Elektri{\v{c}}ni servo pogoni}.
-\newblock Slovensko zdru{\v{z}}enje elektroenergetikov CIGR{\'E}-CIRED, 2016.
-
 \bibitem{ThreeYearsOfExperience}
 S.~Sato, H.~Iura, K.~Ide  in S.-K. Sul, ``Three years of industrial experience
   with sensorless ipmsm drive based on high frequency injection method,'' v
   {\em 2011 Symposium on Sensorless Control for Electrical Drives},
   str.~74--79, 2011.
 
-\bibitem{955987}
-J.-I. Ha, K.~Ide, T.~Sawa  in S.-K. Sul, ``Sensorless position control and
-  initial position estimation of an interior permanent magnet motor,'' v {\em
-  Conference Record of the 2001 IEEE Industry Applications Conference. 36th IAS
-  Annual Meeting (Cat. No.01CH37248)}, vol.~4, str.~2607--2613 vol.4, 2001.
+\bibitem{enwiki:fourierSeries}
+{Wikipedia contributors}, ``Fourier series --- {Wikipedia}{,} the free
+  encyclopedia,'' 2025.
+\newblock [Online; accessed 27-February-2025].
+
+\bibitem{ambrovzivc2016elektrivcni}
+V.~Ambro{\v{z}}i{\v{c}}, P.~Zajec, D.~Von{\v{c}}ina  in R.~Fi{\v{s}}er, {\em
+  Elektri{\v{c}}ni servo pogoni}.
+\newblock Slovensko zdru{\v{z}}enje elektroenergetikov CIGR{\'E}-CIRED, 2016.
 
 \bibitem{IPDBoussak}
 M.~Boussak, ``Implementation and experimental investigation of sensorless speed
   control with initial rotor position estimation for interior permanent magnet
   synchronous motor drive,'' {\em IEEE Transactions on Power Electronics},
   vol.~20, no.~6, str.~1413--1422, 2005.
-
-\bibitem{enwiki:fourierSeries}
-{Wikipedia contributors}, ``Fourier series --- {Wikipedia}{,} the free
-  encyclopedia,'' 2025.
-\newblock [Online; accessed 27-February-2025].
 
 \end{thebibliography}
