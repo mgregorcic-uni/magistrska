@@ -3197,11 +3197,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.0000001"
-     inkscape:cx="236.99999"
-     inkscape:cy="305.99998"
+     inkscape:zoom="2.0000002"
+     inkscape:cx="309.74997"
+     inkscape:cy="345.49997"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="true"
      units="mm"
      inkscape:window-width="2538"
@@ -3413,15 +3413,13 @@
          x="706.836"
          y="417.1116"
          id="text3834-8-8-0-0-0-5-2-9-0-0-0-3-0-3-6-4-71-2-9-4"><tspan
-           style="font-style:italic;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';baseline-shift:baseline;stroke-width:1.33333"
+           style="font-style:italic;font-weight:bold;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman';baseline-shift:baseline;stroke-width:1.33333"
            y="417.1116"
            x="706.836"
            id="tspan10198-1-6-5-7-40-6-2-6-5-7-3-5-5"
-           sodipodi:role="line"><tspan
-             style="font-weight:bold"
-             id="tspan5">u</tspan><tspan
-             style="font-size:65%;baseline-shift:sub"
-             id="tspan4">dqh</tspan></tspan></text>
+           sodipodi:role="line">u<tspan
+   style="font-weight:normal;font-size:65%;baseline-shift:sub"
+   id="tspan12">αβh</tspan></tspan></text>
       <text
          inkscape:transform-center-y="-1.3257743"
          inkscape:transform-center-x="15.094045"
@@ -3814,7 +3812,7 @@
     </g>
     <g
        style="stroke-width:0.937499"
-       transform="matrix(1.066669,0,0,1.066667,155.08604,178.53554)"
+       transform="matrix(1.066669,0,0,1.066667,155.08603,193.65364)"
        id="g4370-8">
       <path
          inkscape:connector-curvature="0"
@@ -3829,7 +3827,7 @@
     </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.500001px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       d="m 421.41734,239.76247 h 3.77953"
+       d="m 421.41733,224.64435 h 3.77953"
        id="path6320-2"
        inkscape:connector-curvature="0" />
     <circle
@@ -4256,7 +4254,7 @@
          y="142.51176"
          x="233.56485"
          sodipodi:role="line"
-         id="tspan36-2">Estimacija pozicije rotorja</tspan></text>
+         id="tspan36-2">Ocenjevanje pozicije rotorja</tspan></text>
     <text
        id="text3834-6-0-71-7-2-4-0-6-5-1-4-8"
        y="167.95143"
