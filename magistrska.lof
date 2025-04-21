@@ -6,28 +6,28 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Presek IPMSM stroja.}}{3}{figure.2.1}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Uporabljeni koordinatni sistemi pri FOC vodenju.}}{5}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Shema brezsenzorskega FOC vodenja.}}{5}{figure.2.3}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Shema brezsenzorskega FOC vodenja.}}{6}{figure.2.3}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Induktivnost stroja. }}{7}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Amplituda VF tokovnega odziva v $\alpha $ osi v odvisnosti od pozicije rotorja.}}{8}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Amplituda VF tokovnega odziva v oseh $\alpha $ in $\beta $ v odvisnosti od pozicije rotorja.}}{9}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Koordinatni sistemi RKS z amplitudo VF tokovnega odziva v črni, FKS v modri in HKS v rdeči v barvi. Prikazani sta tudi amplitudi VF tokovnega odziva $I_{dh}$ in $I_{qh}$.}}{11}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces $I_e$ v odvisnosti od odklona FKS od RKS.}}{12}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Shema HFSI algoritma.}}{14}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces $I_e$ pri odklonu HKS od FKS 0 in 45°.}}{15}{figure.3.7}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Vpliv enosmerne prečne tokovne komponentne na $I_e$ pri različnih odklonih rotorja od FKS.}}{16}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Neidealnost $I_e$ pri različnih prečnih tokovih, kjer HKS sledi RKS.}}{17}{figure.3.9}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Napetost faze ko sta oba tranzistorja zaprta}}{18}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Odvisnost popačenja amplitude odziva od dolžine mrtvega časa }}{19}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Odvisnost popačenja amplitude odziva od napajalne napetosti }}{20}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Vpliv mrtvega časa na faznem toku }}{21}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Vpliv prečnega toka na popačenje $I_e$ zaradi mrtvega časa. }}{21}{figure.3.14}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Amplituda VF tokovnega odziva v $\alpha $ osi v odvisnosti od položaja rotorja.}}{9}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Amplituda VF tokovnega odziva v oseh $\alpha $ in $\beta $ v odvisnosti od položaja rotorja.}}{10}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Koordinatni sistemi RKS z amplitudo VF tokovnega odziva v črni, FKS v modri in HKS v rdeči v barvi. Prikazani sta tudi amplitudi VF tokovnega odziva $I_{dh}$ in $I_{qh}$.}}{12}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces $I_e$ v odvisnosti od napake ocene položaja $\Delta \theta $.}}{13}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Shema HFSI algoritma.}}{15}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces $I_e$ pri odklonu HKS od FKS 0 in 45°.}}{16}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Vpliv enosmerne prečne tokovne komponentne na $I_e$ pri različnih odklonih rotorja od FKS.}}{17}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Neidealnost $I_e$ pri različnih prečnih tokovih, kjer HKS sledi RKS.}}{18}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Komutacija toka zaradi mrtvega časa.}}{19}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Odvisnost popačenja amplitude odziva od dolžine mrtvega časa. }}{20}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Odvisnost popačenja amplitude odziva od napajalne napetosti. }}{21}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Vpliv mrtvega časa na faznem toku }}{22}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Vpliv prečnega toka na popačenje $I_e$ zaradi mrtvega časa. }}{22}{figure.3.14}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces HFSI shema z dodanim pasovnim filtrom povratne zanke in začetno vrednost integratorja. }}{24}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Preklop v delovanje SMO opazovalnika pozicije. }}{25}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Preklop v delovanje SMO opazovalnika pozicije. }}{26}{figure.4.3}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Preklop v delovanje SMO opazovalnika pozicije. }}{26}{figure.4.4}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces FOC shema s HFSI in SMO ocenjevalnikom pozicije. }}{27}{figure.4.5}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Preklop v delovanje SMO opazovalnika položaja. }}{25}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Preklop v delovanje SMO opazovalnika položaja. }}{26}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Preklop v delovanje SMO opazovalnika položaja. }}{26}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces FOC shema s HFSI in SMO ocenjevalnikom položaja. }}{27}{figure.4.5}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Fotografija močnostnega pretvornika in stroja}}{29}{figure.5.1}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Pulzno širinska modulacija močnostnega pretvornika }}{30}{figure.5.2}%
@@ -35,11 +35,11 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Meritev toka $i_u$ }}{32}{figure.5.4}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Meritev toka $-i_w$ }}{32}{figure.5.5}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Fazne napetosti in ojačan signal shunta. }}{33}{figure.5.6}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Ocena pozicije rotorja in tok $I_e$ pri obratovanju brez dodatnega bremena. }}{34}{figure.5.7}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Ocena pozicije rotorja in tok $I_e$ pri nizki vrtilni hitrosti. }}{35}{figure.5.8}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Ocena pozicije rotorja in napaka ocene pri različnimi prečnimi tokovi. }}{36}{figure.5.9}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Ocena pozicije rotorja in napaka ocene pri različnimi vrednostmi mrtvega časa. }}{37}{figure.5.10}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Napaka ocene kota pri različnimi prečnimi tokovi in velikim mrtvim časom. }}{38}{figure.5.11}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Ocena položaja rotorja in tok $I_e$ pri obratovanju brez dodatnega bremena. }}{34}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Ocena položaja rotorja in tok $I_e$ pri nizki vrtilni hitrosti. }}{35}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Ocena položaja rotorja in napaka ocene pri različnimi prečnimi tokovi. }}{36}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Ocena položaja rotorja in napaka ocene pri različnih vrednostih mrtvega časa. }}{37}{figure.5.10}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Napaka ocene položaja pri različnih prečnih tokovih in velikim mrtvim časom. }}{38}{figure.5.11}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1}{\ignorespaces Prikaz vpliva premajhnega $K_p$ parametra. }}{43}{figure.Alph0.1}%
 \contentsline {figure}{\numberline {2}{\ignorespaces Prikaz vpliva prevelikega $K_p$ parametra. }}{44}{figure.Alph0.2}%
