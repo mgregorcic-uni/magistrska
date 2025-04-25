@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex magistrska"] 1745253459.71723 "magistrska.aux" "magistrska.bbl" "magistrska" 1745254171.75394 0
+["bibtex magistrska"] 1745253459.71723 "magistrska.aux" "magistrska.bbl" "magistrska" 1745579253.92865 0
   "./ieeetrslo.bst" 1740638906 17405 277689a886042e65c9fe7fcf72300b58 ""
   "./literatura.bib" 1745248315 5560 2732ec4bc713740729ba002eaeffcd41 ""
-  "magistrska.aux" 1745254169 15477 a0c84fafe6b8311da9c72164091c8c4c "pdflatex"
+  "magistrska.aux" 1745579251 15477 a0c84fafe6b8311da9c72164091c8c4c "pdflatex"
   (generated)
   "magistrska.bbl"
   "magistrska.blg"
   (rewritten before read)
-["pdflatex"] 1745254163.96148 "d:/Faks in backup/Faks/magistrska/magistrska_latex/Delo/magistrska/magistrska.tex" "magistrska.pdf" "magistrska" 1745254171.7553 0
+["pdflatex"] 1745579244.56825 "d:/Faks in backup/Faks/magistrska/magistrska_latex/Delo/magistrska/magistrska.tex" "magistrska.pdf" "magistrska" 1745579253.92995 0
   "C:/Users/matic/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1743326381 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/matic/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0700.pk" 1743326525 8268 ec67251150cc23f009ff5a6b896a2a20 ""
   "C:/Users/matic/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1738176112 14064 d830a63bed2860eee20235d302b5d503 ""
@@ -243,15 +243,15 @@
   "Slike/vsiljenaPozicijaTokoviZMrtvimCasom_angleError.eps" 1745060986 144094 15830db4361724f8c1d8239f51efd08e ""
   "Slike/vsiljenaPozicijaTokovi_angleError.eps" 1745060957 153704 8928a8248845d88529cd2afd891a8263 ""
   "UNI-LJ-FE-Diploma.sty" 1740638904 16698 19469bf6d3ecf1d65ff7d33f653508a6 ""
-  "d:/Faks in backup/Faks/magistrska/magistrska_latex/Delo/magistrska/magistrska.tex" 1745254170 65342 092b7fc203fc26fd8e52f5ba95fa5c72 ""
-  "magistrska.aux" 1745254169 15477 a0c84fafe6b8311da9c72164091c8c4c "pdflatex"
+  "d:/Faks in backup/Faks/magistrska/magistrska_latex/Delo/magistrska/magistrska.tex" 1745579241 66221 64dc5e2b6f88574620e7823402e7c0e8 ""
+  "magistrska.aux" 1745579251 15477 a0c84fafe6b8311da9c72164091c8c4c "pdflatex"
   "magistrska.bbl" 1745253460 2417 68ea8a3bfd9e6ea6fcce690e46a1945e "bibtex magistrska"
-  "magistrska.lof" 1745254169 5345 7ec01dbf24638dab539fd33b95020028 "pdflatex"
-  "magistrska.out" 1745254169 2905 4c3a51fb5aeb23b4a3607245e8e06ee2 "pdflatex"
-  "magistrska.tex" 1745254170 65342 092b7fc203fc26fd8e52f5ba95fa5c72 ""
-  "magistrska.toc" 1745254169 1554 b4fbb6dcda9777c1f5785fe03c567df9 "pdflatex"
+  "magistrska.lof" 1745579251 5345 7ec01dbf24638dab539fd33b95020028 "pdflatex"
+  "magistrska.out" 1745579251 2905 4c3a51fb5aeb23b4a3607245e8e06ee2 "pdflatex"
+  "magistrska.tex" 1745579241 66221 64dc5e2b6f88574620e7823402e7c0e8 ""
+  "magistrska.toc" 1745579251 1554 b4fbb6dcda9777c1f5785fe03c567df9 "pdflatex"
   "magistrska.xmpdata" 1740638906 170 f20d0d804674c6d03a647ab37dfd4223 ""
-  "pdfa.xmpi" 1745254165 5256 ec54730f0ea64f1b72bde64c4b988bc0 "pdflatex"
+  "pdfa.xmpi" 1745579248 5256 1117ee00d0582dc06dd374affd975539 "pdflatex"
   (generated)
   "magistrska.aux"
   "magistrska.lof"
