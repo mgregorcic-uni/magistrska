@@ -62,7 +62,7 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
    <dc:format>application/pdf</dc:format> 
-   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Navodila in predloga za izdelavo zaključnega dela</rdf:li></rdf:Alt></dc:title>
+   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Vpeljava HFSI algoritma v brezsenzorski pogon</rdf:li></rdf:Alt></dc:title>
    <dc:creator><rdf:Seq><rdf:li>Matic Gregorčič</rdf:li></rdf:Seq></dc:creator>
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:prism="http://prismstandard.org/namespaces/basic/2.2/"> 
@@ -75,15 +75,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2025-04-25T13:07:25+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2025-04-25T13:07:25+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2025-04-25T13:07:25+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2025-05-29T14:52:36+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2025-05-29T14:52:36+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2025-05-29T14:52:36+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:4BA2A237-5232-2053-FCA4-511223DA5A07</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:6F45EB73-70A4-0398-4AD5-15F4992D3ABD</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:89AB0D66-761D-1C90-D770-505D82F42AC6</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 

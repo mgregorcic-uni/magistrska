@@ -1,54 +1,32 @@
 \begin{thebibliography}{1}
 
-\bibitem{6689315}
-J.~M. Liu in Z.~Q. Zhu, ``Sensorless control strategy by square-waveform
-  high-frequency pulsating signal injection into stationary reference frame,''
-  {\em IEEE Journal of Emerging and Selected Topics in Power Electronics},
-  vol.~2, no.~2, str.~171--180, 2014.
-
-\bibitem{8818673}
-Y.~Zhang, Z.~Yin, J.~Liu, R.~Zhang  in X.~Sun, ``Ipmsm sensorless control using
-  high-frequency voltage injection method with random switching frequency for
-  audible noise improvement,'' {\em IEEE Transactions on Industrial
-  Electronics}, vol.~67, no.~7, str.~6019--6030, 2020.
-
-\bibitem{6676793}
-J.~M. Liu in Z.~Q. Zhu, ``Novel sensorless control strategy with injection of
-  high-frequency pulsating carrier signal into stationary reference frame,''
-  {\em IEEE Transactions on Industry Applications}, vol.~50, no.~4,
-  str.~2574--2583, 2014.
-
-\bibitem{ThreeYearsOfExperience}
-S.~Sato, H.~Iura, K.~Ide  in S.-K. Sul, ``Three years of industrial experience
-  with sensorless ipmsm drive based on high frequency injection method,'' v
-  {\em 2011 Symposium on Sensorless Control for Electrical Drives},
-  str.~74--79, 2011.
-
-\bibitem{8746146}
-S.~Wang, K.~Yang  in K.~Chen, ``An improved position-sensorless control method
-  at low speed for pmsm based on high-frequency signal injection into a
-  rotating reference frame,'' {\em IEEE Access}, vol.~7, str.~86510--86521,
-  2019.
-
-\bibitem{enwiki:fourierSeries}
-{Wikipedia contributors}, ``Fourier series --- {Wikipedia}{,} the free
-  encyclopedia,'' 2025.
-\newblock [Online; accessed 27-February-2025].
-
 \bibitem{ambrovzivc2016elektrivcni}
-V.~Ambro{\v{z}}i{\v{c}}, P.~Zajec, D.~Von{\v{c}}ina  in R.~Fi{\v{s}}er, {\em
-  Elektri{\v{c}}ni servo pogoni}.
+V.~Ambro{\v{z}}i{\v{c}}, P.~Zajec, D.~Von{\v{c}}ina  in R.~Fi{\v{s}}er, {\em Elektri{\v{c}}ni servo pogoni}.
 \newblock Slovensko zdru{\v{z}}enje elektroenergetikov CIGR{\'E}-CIRED, 2016.
 
+\bibitem{6689315}
+J.~M. Liu in Z.~Q. Zhu, ``Sensorless control strategy by square-waveform high-frequency pulsating signal injection into stationary reference frame,'' {\em IEEE Journal of Emerging and Selected Topics in Power Electronics}, vol.~2, no.~2, str.~171--180, 2014.
+
+\bibitem{8818673}
+Y.~Zhang, Z.~Yin, J.~Liu, R.~Zhang  in X.~Sun, ``Ipmsm sensorless control using high-frequency voltage injection method with random switching frequency for audible noise improvement,'' {\em IEEE Transactions on Industrial Electronics}, vol.~67, no.~7, str.~6019--6030, 2020.
+
+\bibitem{6676793}
+J.~M. Liu in Z.~Q. Zhu, ``Novel sensorless control strategy with injection of high-frequency pulsating carrier signal into stationary reference frame,'' {\em IEEE Transactions on Industry Applications}, vol.~50, no.~4, str.~2574--2583, 2014.
+
+\bibitem{ThreeYearsOfExperience}
+S.~Sato, H.~Iura, K.~Ide  in S.-K. Sul, ``Three years of industrial experience with sensorless ipmsm drive based on high frequency injection method,'' v {\em 2011 Symposium on Sensorless Control for Electrical Drives}, str.~74--79, 2011.
+
+\bibitem{8746146}
+S.~Wang, K.~Yang  in K.~Chen, ``An improved position-sensorless control method at low speed for pmsm based on high-frequency signal injection into a rotating reference frame,'' {\em IEEE Access}, vol.~7, str.~86510--86521, 2019.
+
+\bibitem{enwiki:fourierSeries}
+{Wikipedia contributors}, ``Fourier series --- {Wikipedia}{,} the free encyclopedia,'' 2025.
+\newblock [Online; accessed 27-February-2025].
+
 \bibitem{IPDBoussak}
-M.~Boussak, ``Implementation and experimental investigation of sensorless speed
-  control with initial rotor position estimation for interior permanent magnet
-  synchronous motor drive,'' {\em IEEE Transactions on Power Electronics},
-  vol.~20, no.~6, str.~1413--1422, 2005.
+M.~Boussak, ``Implementation and experimental investigation of sensorless speed control with initial rotor position estimation for interior permanent magnet synchronous motor drive,'' {\em IEEE Transactions on Power Electronics}, vol.~20, no.~6, str.~1413--1422, 2005.
 
 \bibitem{9400421}
-C.~J.~V. Filho, D.~Xiao, R.~P. Vieira  in A.~Emadi, ``Observers for high-speed
-  sensorless pmsm drives: Design methods, tuning challenges and future
-  trends,'' {\em IEEE Access}, vol.~9, str.~56397--56415, 2021.
+C.~J.~V. Filho, D.~Xiao, R.~P. Vieira  in A.~Emadi, ``Observers for high-speed sensorless pmsm drives: Design methods, tuning challenges and future trends,'' {\em IEEE Access}, vol.~9, str.~56397--56415, 2021.
 
 \end{thebibliography}

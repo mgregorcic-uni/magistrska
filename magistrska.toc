@@ -3,20 +3,20 @@
 \babel@toc {english}{}\relax 
 \babel@toc {slovene}{}\relax 
 \contentsline {chapter}{\numberline {1}Uvod}{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Sinhronski stroj IPMSM}{3}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Sinhronski stroj s potopljenimi magneti}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Model IPMSM}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Brezsenzorsko vodenje FOC}{4}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Delovanje HFSI}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Visokofrekvenčno vzbujanje statorja}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Izračun položaja rotorja}{13}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Odstopanja realnega sistema}{16}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Vpliv mrtvega časa pretvornika}{18}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Integracija v FOC}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Inicializacija HFSI}{23}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Brezudarni preklop v delovanje SMO opazovalnika}{25}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Nastavitev parametrov PI regulatorja}{28}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Eksperimenti}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Trifazni PWM in meritev toka}{30}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Rezultati}{34}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Zaključek}{39}{chapter.6}%
-\contentsline {chapter}{Literatura}{41}{section*.7}%
+\contentsline {section}{\numberline {2.2}Brezsenzorsko vodenje z regulacijo v orientaciji rotorskega polja}{4}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Delovanje metode vzbujanja z visokofrekvenčnim signalom}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Visokofrekvenčno vzbujanje statorskega navitja}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Izračun položaja rotorja}{14}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Odstopanja realnega sistema}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Vpliv mrtvega časa pretvornika}{19}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Integracija v FOC}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Inicializacija HFSI}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Brezudarni preklop v način opazovalnika SMO}{27}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Nastavitev parametrov PI regulatorja}{30}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Eksperimentalna verifikacija}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Trifazna pulzno širinska modulacija in meritev toka}{32}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Rezultati}{37}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Zaključek}{43}{chapter.6}%
+\contentsline {chapter}{Literatura}{45}{section*.7}%
