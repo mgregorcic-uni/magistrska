@@ -120,7 +120,7 @@ Za ocenjevanje položaja rotorja pri nižjih hitrostih ali v mirovanju izkoriš�
 lahko iz te ocenjujemo položaj rotorja. Zato stator stroja vzbujamo z visokofrekvenčnim signalom, preko tokovnega odziva pa ocenjujemo položaj rotorja. Z vodenjem v koordinatah rotorskega polja (FOC) pa nato 
 vodimo prečni tok, ki tvori navor. Ker je položaj znan se poveča tudi navorna zmogljivost pogona pri nizkih hitrostih.
 
-Na realnem sistemu smo opazili dva večja odstopanja od pričakovanega delovanja, ki kvarita oceno položaja rotorja. Prvo odstopanje se pojavi zaradi mrtvega časa razsmernika. Pokazali smo kako ta vpliva na 
+Na realnem sistemu smo opazili dve večji odstopanji od pričakovanega delovanja, ki kvarita oceno položaja rotorja. Prvo odstopanje se pojavi zaradi mrtvega časa razsmernika. Pokazali smo kako ta vpliva na 
 algoritem in predstavili nekaj možnosti za minimizacijo napake. Drug dejavnik, ki vpliva na oceno položaja pa je pojav višjeharmonskega popačenja, ki pa ga nam ni uspelo pojasniti in odpraviti. 
 Dodatno je pokazano, da algoritem deluje slabše pri nižjih hitrostih.
 
@@ -133,8 +133,8 @@ Vzbujanje z visokofrekvenčnim signalom, izraženi poli, brezsenzorsko vodenje, 
 
 \abstract
 
-In this thesis a control algorithm for interior permanent magnet synchronous machine (IPMSM) without position sensor is presented. In many sensorless drives the observers used only work at higher speeds. 
-Such driver usually start with an open loop control, where a rotating magnetic field is created to accelerate the rotor. Because the rotor position is not known, the chance of machine desynchronization 
+In this thesis a control algorithm for interior permanent magnet synchronous machine (IPMSM) without position sensor is presented. In sensorless drives the observers commonly used work only at higher speeds. 
+Such drives usually start with an open loop control, where a rotating magnetic field is created to accelerate the rotor. Because the rotor position is not known, the chance of machine desynchronization 
 at higher load torque is great. For robust operation information about rotor position is needed.
 Rotor position estimation at low speeds or standstill is using the fact that IPMSM inductance is rotor position dependent. If inductance is being measured, position can be extracted from it. 
 For this reason, stator is excited with high frequency signal and rotor position estimated from current response. The field oriented control (FOC) is then used to control quadrature current, 
